@@ -132,3 +132,7 @@ Next: Z3 = Z2 + bigold +0.5 (6234082ef2; package ../CANDIDATE_Z3_*), Z4 = Z3 wit
 | friend K3 (Z2 + nd<180 night low-velocity -0.5, high-value cat 2000-6000 age>365 +0.5) | d03cb4d61b | **0.223** |
 K3 top-120: nd&age<=90&t1h>=3 (non-burst) 34/38 rows, ~63-67% injected (hour fingerprint / detector); Q1 demotion -1.0 cost 0.0046
 -> injected fraud type. Next: K4 = K3 + that group +1.0 (ee12bc40b6), K5 = +0.5 (69e50b93c8).
+| shift/K5_K3_fastYoungND+0.5.csv | 69e50b93c8 | 0.21741 |
+| shift/K4_K3_fastYoungND+1.0.csv | ee12bc40b6 | 0.21477 |
+Lesson: Q1 (demote) and K4/K5 (promote) both hurt -> that group was already at its optimum; "down hurts" does not imply "up helps".
+Next: K6 = K3 with nd_old/high-value shifts removed at clean hours 5,6,7,21,22 (82 + 30 rows; 356731ccb5).
