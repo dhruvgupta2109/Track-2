@@ -1,0 +1,141 @@
+=== 1. v3 -> v4 rank movement ===
+         up_top200  down_top200        all
+n          200.000      200.000  20000.000
+fraud        0.000        3.000    353.000
+rate         0.000        0.015      0.018
+new_dev      0.015        0.945      0.091
+young        0.000        0.055      0.127
+night        0.015        0.055      0.210
+burst        0.000        0.000      0.011
+foreign      0.265        0.100      0.298
+big          0.630        0.080      0.133
+age_med   2587.000     2843.500    790.000
+amt_med    307.375       38.195     75.125
+new_device rows by age x night (rank: 0=top)
+                         n  fraud   rate  fraud_rank_v3  fraud_rank_v4  legit_rank_v3  legit_rank_v4
+age_b        night                                                                                 
+(0, 30]      False   75.0   13.0  0.173          0.005          0.005          0.052          0.041
+             True    28.0   12.0  0.429          0.006          0.003          0.014          0.006
+(1500, 5000] False  457.0   10.0  0.022          0.173          0.298          0.249          0.415
+             True    56.0    4.0  0.071          0.045          0.034          0.079          0.062
+(30, 90]     False  210.0   20.0  0.095          0.014          0.014          0.055          0.056
+             True    67.0   24.0  0.358          0.010          0.006          0.019          0.010
+(365, 1500]  False  516.0   11.0  0.021          0.122          0.191          0.169          0.250
+             True   118.0    9.0  0.076          0.049          0.031          0.076          0.050
+(90, 365]    False  198.0   24.0  0.121          0.023          0.028          0.118          0.135
+             True    60.0    7.0  0.117          0.022          0.011          0.050          0.025
+nan          False   13.0    0.0  0.000            NaN            NaN          0.150          0.227
+             True     2.0    1.0  0.500          0.014          0.010          0.104          0.067
+top 1%: precision v3 0.400 v4 0.410 | entered (n=29, fraud rate 0.207) left (n=29, fraud rate 0.138)
+     entered: {'new_dev': 0.97, 'young': 0.69, 'night': 0.93, 'burst': 0.0, 'foreign': 0.34, 'big': 0.31, 'age_med': 63.0}
+     left:    {'new_dev': 0.76, 'young': 0.21, 'night': 0.21, 'burst': 0.52, 'foreign': 0.72, 'big': 0.31, 'age_med': 1525.0}
+top 2%: precision v3 0.270 v4 0.278 | entered (n=55, fraud rate 0.091) left (n=55, fraud rate 0.036)
+     entered: {'new_dev': 0.89, 'young': 0.47, 'night': 0.82, 'burst': 0.04, 'foreign': 0.33, 'big': 0.18, 'age_med': 107.0}
+     left:    {'new_dev': 0.65, 'young': 0.27, 'night': 0.31, 'burst': 0.29, 'foreign': 0.45, 'big': 0.33, 'age_med': 810.0}
+top 5%: precision v3 0.136 v4 0.142 | entered (n=131, fraud rate 0.061) left (n=131, fraud rate 0.015)
+     entered: {'new_dev': 0.53, 'young': 0.15, 'night': 0.4, 'burst': 0.05, 'foreign': 0.45, 'big': 0.37, 'age_med': 705.5}
+     left:    {'new_dev': 0.53, 'young': 0.34, 'night': 0.44, 'burst': 0.02, 'foreign': 0.41, 'big': 0.21, 'age_med': 430.0}
+
+=== 2. fraud by v4 rank tier ===
+                n  fraud  rate  new_dev  young  night  burst  foreign    big  age_med  amt_med
+tier                                                                                          
+A_top5%     142.0  142.0   1.0    0.810  0.521  0.479  0.359    0.746  0.380     77.0   533.40
+B_5-30%     101.0  101.0   1.0    0.089  0.198  0.267  0.020    0.396  0.248    589.5   368.47
+C_below30%  110.0  110.0   1.0    0.100  0.173  0.209  0.000    0.218  0.100    750.0    63.02
+
+B/C frauds vs score-matched legit (same score band +-2.5% rank, same merchant_category):
+B_5-30% n_fraud 101 n_matched_legit 2019
+                       fraud_mean  legit_mean  fraud_med  legit_med
+transaction_amount         632.07      731.47     368.47     356.91
+amt_rel                      0.39        0.37       0.43       0.28
+account_age                810.40      994.66     589.50     704.00
+transactions_last_24h        5.30        4.82       5.00       4.00
+transactions_last_1h         1.12        0.95       1.00       1.00
+spend_last_24h            1362.63     1311.63     695.90     884.01
+transaction_hour            10.80       11.34      10.00      12.00
+new_device                   0.09        0.13       0.00       0.00
+   transaction_channel fraud: {'ecommerce': 0.38, 'mobile_app': 0.28, 'card_present': 0.25, 'bank_transfer': 0.08} | legit: {'ecommerce': 0.35, 'mobile_app': 0.28, 'card_present': 0.26, 'bank_transfer': 0.12}
+   country fraud: {'SG': 0.6, 'ID': 0.14, 'MY': 0.06, 'GB': 0.05, 'PH': 0.04} | legit: {'SG': 0.61, 'MY': 0.08, 'ID': 0.06, 'PH': 0.04, 'US': 0.04}
+   foreign fraud 0.40 legit 0.39 | night fraud 0.27 legit 0.23 | t1h>=3 fraud 0.13 legit 0.07
+   spend/tx24 ratio (amt / avg) fraud 2.41 legit 1.85
+C_below30% n_fraud 110 n_matched_legit 2182
+                       fraud_mean  legit_mean  fraud_med  legit_med
+transaction_amount         100.23      102.86      63.02      58.08
+amt_rel                     -0.11       -0.04      -0.12      -0.06
+account_age               1063.59     1078.91     750.00     811.00
+transactions_last_24h        4.26        4.36       4.00       4.00
+transactions_last_1h         0.82        0.78       1.00       1.00
+spend_last_24h             295.40      318.68     143.15     160.66
+transaction_hour            11.72       11.86      12.00      12.00
+new_device                   0.10        0.04       0.00       0.00
+   transaction_channel fraud: {'mobile_app': 0.38, 'card_present': 0.31, 'ecommerce': 0.2, 'bank_transfer': 0.11} | legit: {'card_present': 0.39, 'ecommerce': 0.27, 'mobile_app': 0.25, 'bank_transfer': 0.09}
+   country fraud: {'SG': 0.78, 'US': 0.05, 'ID': 0.04, 'JP': 0.04, 'GB': 0.03} | legit: {'SG': 0.72, 'MY': 0.05, 'TH': 0.04, 'ID': 0.03, 'US': 0.03}
+   foreign fraud 0.22 legit 0.27 | night fraud 0.21 legit 0.19 | t1h>=3 fraud 0.06 legit 0.04
+   spend/tx24 ratio (amt / avg) fraud 1.38 legit 1.40
+
+=== 3. hardest false positives vs frauds in same score range ===
+top 0.5%: n=100 precision=0.560
+          n  new_dev  young  night  burst  foreign   big  age_med  amt_med
+legit  44.0     0.98   0.70   0.55   0.48     0.93  0.20     68.5   188.27
+fraud  56.0     1.00   0.77   0.50   0.68     0.96  0.41     52.0   707.96
+top 1.0%: n=200 precision=0.410
+           n  new_dev  young  night  burst  foreign   big  age_med  amt_med
+legit  118.0     0.81   0.53   0.62   0.38     0.74  0.30     80.5   361.74
+fraud   82.0     0.91   0.67   0.52   0.56     0.89  0.43     55.0   651.74
+top 2.0%: n=400 precision=0.278
+           n  new_dev  young  night  burst  foreign   big  age_med  amt_med
+legit  289.0     0.78   0.44   0.54   0.25     0.63  0.28    116.0   343.61
+fraud  111.0     0.90   0.58   0.50   0.43     0.82  0.40     63.0   546.33
+top 5.0%: n=1000 precision=0.142
+           n  new_dev  young  night  burst  foreign   big  age_med  amt_med
+legit  858.0     0.60   0.41   0.39   0.14     0.50  0.28    173.5    299.1
+fraud  142.0     0.81   0.52   0.48   0.36     0.75  0.38     77.0    533.4
+transaction_channel 
+ transaction_channel  bank_transfer  card_present  ecommerce  mobile_app
+size                       178.000       159.000     401.00     253.000
+mean                         0.208         0.088       0.18       0.071
+merchant_category 
+ merchant_category  cash_transfer  electronics  entertainment  food_delivery  gaming  grocery   luxury  retail  transport  travel  utilities
+size                     215.000      191.000           26.0         79.000  78.000   49.000  105.000  86.000     52.000  77.000     39.000
+mean                       0.191        0.183            0.0          0.177   0.115    0.041    0.162   0.093      0.096   0.091      0.103
+age_b 
+ age_b  (0, 30]  (1500, 5000]  (30, 90]  (365, 1500]  (90, 365]    nan
+size   151.000       156.000   280.000      246.000    164.000  3.000
+mean     0.172         0.103     0.171        0.081      0.189  0.333
+within top 5%: fraud rate by burst x young:
+              size   mean
+burst young             
+False False   447  0.105
+      True    380  0.116
+True  False   126  0.167
+      True     47  0.638
+within top 5%: fraud rate by burst x night:
+              size   mean
+burst night             
+False False   489  0.104
+      True    338  0.118
+True  False   107  0.215
+      True     66  0.424
+within top 5%: fraud rate by big x age_b:
+                     size   mean
+big   age_b                    
+False (0, 30]        118  0.144
+      (1500, 5000]    81  0.099
+      (30, 90]       222  0.149
+      (365, 1500]    163  0.061
+      (90, 365]      122  0.164
+True  (0, 30]         33  0.273
+      (1500, 5000]    75  0.107
+      (30, 90]        58  0.259
+      (365, 1500]     83  0.120
+      (90, 365]       42  0.262
+      nan              3  0.333
+within top 5%: fraud rate by foreign:
+          size   mean
+foreign             
+False     468  0.077
+True      532  0.199
+within top 5%: t1h:
+ transactions_last_1h      0.0      1.0      2.0     3.0     4.0     5.0      6.0
+size                  303.000  253.000  109.000  54.000  92.000  51.000  132.000
+mean                    0.112    0.063    0.083   0.167   0.228   0.294    0.258
