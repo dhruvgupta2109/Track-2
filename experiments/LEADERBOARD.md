@@ -123,3 +123,7 @@ hours 0.574 vs 0.684 elsewhere). Bursts are NOT injected (base itself has ~4x bu
 amt>2000 643, big&age>1500 886, luxury/travel/cash/electronics, foreign. Night-band (23-4): ordinary low-value SG established accounts (802).
 Detector P(inj|x) (cross-fitted band-vs-clean) says high-scoring big&old rows are most injected; public says demoting them hurts ->
 day injection includes high-value fraud on established accounts. Next: U1 (P1 + bigold +0.5), U2 (+ travel +0.5).
+| shift/U1_P1_bigold+0.5.csv | c9c788e7f1 | 0.21424 |
+| shift/U2_P1_bigold+0.5_travel+0.5.csv | e843505789 | 0.21082 |
+| friend Z2 (young -2, old -0.5, ndold -0.75) | 95dccc5fd8 | **0.21922** |
+Next: Z3 = Z2 + bigold +0.5 (6234082ef2; package ../CANDIDATE_Z3_*), Z4 = Z3 with old bursts -0.25 (a6c7f33a09).
