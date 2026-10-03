@@ -29,13 +29,14 @@ def _fit(a, b, real, syn):
     B["dr"] = np.log1p(dfx[ns:, 0]) - np.log1p(dlx[ns:, 0]); num.append("dr")
     m = models.lr_pipeline(0.1, num, models.LR_CAT); m.fit(Af[models.LR_CAT + num], full.fraud.values, logisticregression__sample_weight=full.w.values)
     return m.predict_proba(B[models.LR_CAT + num])[:, 1]
-for gen in ["smote", "jitter", "copula"]:
-    for alpha in [0.1, 0.25, 0.5]:
-        screen(f"mass-preserving {gen} alpha={alpha}", MP(gen, alpha))
-def PS(q, w):
-    def fp(a, b):
-        p0 = G.fit_predict(a, b); lo = p0 <= np.quantile(p0, q)
-        return G.fit_predict(a, b, None, b[lo].assign(fraud=0, w=w))
-    return fp
-for q, w in [(0.3, 0.5), (0.3, 1.0), (0.5, 0.25), (0.7, 0.25)]:
-    screen(f"pseudo legit bottom {q} w={w}", PS(q, w))
+if __name__ == "__main__":
+  for gen in ["smote", "jitter", "copula"]:
+      for alpha in [0.1, 0.25, 0.5]:
+          screen(f"mass-preserving {gen} alpha={alpha}", MP(gen, alpha))
+  def PS(q, w):
+      def fp(a, b):
+          p0 = G.fit_predict(a, b); lo = p0 <= np.quantile(p0, q)
+          return G.fit_predict(a, b, None, b[lo].assign(fraud=0, w=w))
+      return fp
+  for q, w in [(0.3, 0.5), (0.3, 1.0), (0.5, 0.25), (0.7, 0.25)]:
+      screen(f"pseudo legit bottom {q} w={w}", PS(q, w))
