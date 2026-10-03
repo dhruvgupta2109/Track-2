@@ -95,3 +95,6 @@ New: LBmix_emulator_optimum.csv (ffcc529417, emulator +0.003 vs v5), TOP5_public
 EM per-segment direction matched all three tested segments (burst -, ndold -, bigold + => down-shift hurts); enrichment rule did not (bigold).
 Best package copied to ../BEST_S3_v5_burst_ndold_0.20453 (sandbox-verified, maxdiff 2e-16).
 Next: G1_generator_formula.csv (a2687f3a53, user request), V1_S3_plus_travel-0.5.csv (df00e35171, EM says travel ~0%).
+| shift/V1_S3_plus_travel-0.5.csv | df00e35171 | 0.20237 |
+| shift/G1_generator_formula.csv | a2687f3a53 | 0.17795 (formula is not the generator) |
+Next: W1_E3base_S3shifts, W2_burst-1.0_ndold-0.75.
