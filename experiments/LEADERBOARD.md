@@ -184,3 +184,7 @@ Final: R2op (../Track2_R2op_package, 0.23434 public, sandbox-verified, includes 
   FAILED time holdout (predicted C1/C7/R2op/R3op deltas vs Q30 off by 0.006-0.045; degenerate all-fit) -> rejected; probing one change at a time instead.
 | probe/B1_R2op_burst_MYIDSG-0.25_other+0.25.csv | fd8bab494f | ? | bursts split by country type (per-row rate vs train: MY/ID/SG bursts 3.9x, other-country bursts 1.7x) |
 | probe/T3a_R2op_T3box+0.7.csv | a505e444ab | ? | planted night box T3 nudged up (never probed) |
+## TabPFN (pretrained tabular transformer, tabpfn 9.1.0, GPU; src/tabpfn_cv.py) - REJECTED
+Same folds (evaluate.SPLITS repeat 0), CV PR-AUC: v5 0.2488 | R2 base blend 0.2582 |
+TabPFN raw features 0.2249 (blend into R2 base: -0.0006 @0.1 ... -0.0153 @0.7) | TabPFN raw+engineered 0.2344 (blend +0.0002 @0.1, -0.0001 @0.2, worse beyond).
+No architecture tried beats the LR + kNN + interaction-LR + GALR blend; R2op (0.23434) remains final.
