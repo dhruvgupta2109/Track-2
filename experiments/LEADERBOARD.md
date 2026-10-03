@@ -164,3 +164,9 @@ Next: K6 = K3 with nd_old/high-value shifts removed at clean hours 5,6,7,21,22 (
   CV F1 ~0.30, expected test F1 0.24 / recall 0.27); ranking/PR-AUC unchanged.
 | tmpl/R1op_package_output.csv (= ../Track2_R1op_package/predictions_R1op.csv; Q30 + T2 level 0.035 a0.3 + op shift) | 1c81db55b1 | ? |
 Packages: ../Track2_R1op_package and ../Track2_Q30op_package (both sandbox-verified).
+## Generator-aware basis LR (GALR; src/galr.py, galr_fresh.py, galr_bag.py)
+- Same 5x5 folds: GALR (with nd x night / nd x ecommerce) 0.2373-0.2379 for C 0.03-0.1 (hypothesis ~0.235-0.24 reproduced); without interactions 0.229-0.231
+  (~0.227 simple LR reproduced). vs v5 -0.011 (0/5 reps), vs Q30 base (v5+poly) -0.017 -> fails standalone.
+- As blend member 0.8 Q30base + 0.2 GALR: +0.0009..+0.0011 (5/5); fresh seeds 11/99/314: w0.1 +0.0011..+0.0013, w0.2 +0.0008..+0.0030;
+  nested CV (C,w inner-selected, never w=0): +0.0017 / +0.0033. Bagging 30 fold models (prob or rank avg): no gain vs full fit.
+| tmpl/R2op_package_output.csv (= ../Track2_R2op_package/predictions_R2op.csv) | bc365689c1 | ? |
