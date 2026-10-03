@@ -53,3 +53,27 @@ def make_features(df, K):
     df["nd_x_night"] = nd * df.night
     df["hc"] = df.transaction_hour.map(lambda h: np.nan if pd.isna(h) else str(int(h)))
     return df
+
+
+# ---------------- v5 additions (row-local given stored train constants / reference sets) ----------------
+V5_EMB = ["log_amt", "amt_rel_cat", "log_age", "new_device", "transactions_last_24h", "transactions_last_1h", "night", "foreign", "avg_spend", "amt_rel_avg"]
+
+
+def add_v5_features(df, K, knn=True):
+    """age step, amount relative to channel/country medians, amount percentile within merchant category,
+    and (optionally) the kNN distance ratio to stored training fraud / legit reference points."""
+    df["age_lt120"] = (df.account_age < 120).astype(float).where(df.account_age.notna())
+    for g in ["transaction_channel", "country"]:
+        df["amt_rel_" + g] = df.log_amt - df[g].map(K["med_log_amt_" + g]).astype(float).fillna(K["global_med_log_amt"])
+    pc = np.full(len(df), 0.5)
+    for cat, v in K["sorted_log_amt_by_cat"].items():
+        m = (df.merchant_category == cat).values
+        if m.any():
+            pc[m] = np.searchsorted(v, df.log_amt.values[m]) / len(v)
+    df["amt_pct_cat"] = pc
+    if knn:
+        E = (df[V5_EMB].fillna(K["emb_median"]).values - K["emb_mean"]) / K["emb_scale"]
+        d_f = K["nn_fraud"].kneighbors(E, n_neighbors=1)[0][:, 0]
+        d_l = K["nn_legit"].kneighbors(E, n_neighbors=1)[0][:, 0]
+        df["d_ratio"] = np.log1p(d_f) - np.log1p(d_l)
+    return df

@@ -17,3 +17,12 @@ If 0.17617 is v1/v2: v1->v3 std +0.0017, hnW +0.0047, public -0.0041 (direction 
 - C sweep 0.03..30: flat 0.05-0.3, C=0.1 kept. Hard-example reweighting x1.25/1.5/2: neutral/worse. Residual LGB on v4 margin: worse.
 - v5b burst_night: fresh seeds d_std +0.0022/+0.0012, d_hnW +0.0016/-0.0007; test-like holdout 0.421->0.307, hnW_miss 0.1960->0.1935 -> rejected for packaging.
 - optional probe CSV: submissions/sub_v5b_burstnight_probe.csv (tests: are test daytime bursts legit?)
+
+## Round 6-7 (new search space) - candidate v5
+| candidate | std (seed 2026) | fresh seeds d_std (99/314/7) | fresh d_hnW | hnW | hnW_miss | holdout / holdout_hnW | file |
+|---|---|---|---|---|---|---|---|
+| v4 | 0.2411 | - | - | 0.1970 | 0.1960 | 0.421 / 0.278 | sub_v4_lr.csv (public 0.17966) |
+| v5 = v4 + age<120 + ctx amount + kNN d_ratio | 0.2490 | +0.0025/+0.0028/+0.0047 | +0.0029/+0.0032/+0.0055 | 0.2070 | 0.2022 | 0.430 / 0.296 | sub_v5_lr_knn.csv |
+| v5a = v4 + age<120 + ctx amount | 0.2440 | +0.0027/+0.0019/+0.0014 | +0.0050/+0.0045/+0.0034 | 0.2026 | 0.2011 | 0.427 / 0.290 | sub_v5a_lr.csv |
+Rejected this round: isolation forest, legit-density, WoE bins, MoE (nd/young/foreign), ET/RF/HGB, hard-negative specialists, band reranker,
+subtype detectors, all stacking except kNN, external augmentation, amount steps, t1>=3.

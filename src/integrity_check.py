@@ -16,6 +16,9 @@ b = joblib.load(os.path.join(pkg, "model.pkl")); m = b["model"]
 print("   model.classes_ =", m.classes_)
 chk("8 classes_ == [0,1] so predict_proba[:,1] is P(fraud)", list(m.classes_) == [0, 1])
 exec(open("src/features_prod.py").read())
+_mf = make_features
+if "v5_knn" in b:
+    make_features = lambda df, K: add_v5_features(_mf(df, K), K, knn=b["v5_knn"])
 X = make_features(te, b["constants"])[b["features"]]
 p = m.predict_proba(X)[:, list(m.classes_).index(1)]
 chk("9 csv == fresh in-process predictions (by id)", np.abs(p - s.set_index("id").loc[te.id, "prediction"].values).max() < 1e-12)
