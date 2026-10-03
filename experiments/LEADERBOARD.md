@@ -188,3 +188,22 @@ Final: R2op (../Track2_R2op_package, 0.23434 public, sandbox-verified, includes 
 Same folds (evaluate.SPLITS repeat 0), CV PR-AUC: v5 0.2488 | R2 base blend 0.2582 |
 TabPFN raw features 0.2249 (blend into R2 base: -0.0006 @0.1 ... -0.0153 @0.7) | TabPFN raw+engineered 0.2344 (blend +0.0002 @0.1, -0.0001 @0.2, worse beyond).
 No architecture tried beats the LR + kNN + interaction-LR + GALR blend; R2op (0.23434) remains final.
+## Architecture sweep (ChatGPT list + own; harness src/arch_eval.py: same 5x5 folds, standalone and as R2-base blend member, w chosen on reps 0-2, checked on reps 3-4)
+| candidate | standalone CV AP | best R2-member delta (wins/5) | held-out | verdict |
+|---|---|---|---|---|
+| R2 base blend (reference) | 0.2559 | - | - | public 0.23434 |
+| EBM pure GAM (interpret 0.7.8, isolated .venv_ebm) | 0.2133 | -0.0008 (0/5) | -0.0009 | rejected |
+| EBM smoothed GAM | 0.2123 | -0.0007 (0/5) | -0.0009 | rejected |
+| EBM GA2M 3 interactions | 0.2138 | -0.0007 (0/5) | -0.0008 | rejected |
+| EBM GA2M 10 interactions | 0.2164 | -0.0008 (0/5) | -0.0008 | rejected |
+| Program synthesis (268-program library, L1, C by inner CV per fold) | 0.2269 | -0.0005 (1/5) | -0.0008 | rejected |
+| Program synthesis, relaxed L2 refit | 0.2071 | -0.0008 (0/5) | -0.0008 | rejected |
+| v5 + fold-selected programs (nested) | 0.2068-0.2234 | -0.0004 (1/5) | -0.0005 | rejected |
+| Joint LR on v5 + GALR + interaction blocks | 0.2268-0.2464 | +0.0005..+0.0010 (3-5/5) | +0.0001..+0.0010 | noise-level, not used |
+| Direct AP optimisation (Smooth-AP, warm start from v5 LR) | below v5 on every fold (0.21-0.25 vs 0.218-0.257) | - | - | rejected |
+| TabPFN full context raw / raw+eng | 0.2249 / 0.2344 | -0.0006 / +0.0002 | - | rejected |
+| TabPFN context bagging (all frauds + 8k legit x6) | fold0 0.2294 (v5 0.2538) | - | - | stopped (fail fast) |
+Program synthesis stability: 28 programs rediscovered in >=80% of 25 folds (nd&night, nd&age<365, nd&amt>1000, nd&ecom, night&burst,
+foreign&age<180, foreign&amt>500, burst&amt>1000, amt>250, amt>500, t24>=20, t1>=4, t1>=7, age>270, ...) - real structure, already
+captured by v5's smooth features + interaction LR. Earlier: LCA generative (0.18), multiple imputation, importance weighting, WoE - rejected.
+Conclusion: no architecture beats the LR+kNN+interaction+GALR blend on train CV; R2op (0.23434) stays final.

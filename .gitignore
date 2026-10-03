@@ -7,3 +7,4 @@ experiments/codex/*.npy
 experiments/codex/*_executed.ipynb
 tmp/
 deliverables/*.zip
+.venv_ebm/
