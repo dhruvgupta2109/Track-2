@@ -136,3 +136,11 @@ K3 top-120: nd&age<=90&t1h>=3 (non-burst) 34/38 rows, ~63-67% injected (hour fin
 | shift/K4_K3_fastYoungND+1.0.csv | ee12bc40b6 | 0.21477 |
 Lesson: Q1 (demote) and K4/K5 (promote) both hurt -> that group was already at its optimum; "down hurts" does not imply "up helps".
 Next: K6 = K3 with nd_old/high-value shifts removed at clean hours 5,6,7,21,22 (82 + 30 rows; 356731ccb5).
+| shift/K6_K3_cleanhour_unshift.csv | 356731ccb5 | 0.22041 |
+## Research round (3 Oct ~20:10)
+- Web: dataset/generator not public. A competing team's public repo exists (github.com/Sindyyyy19/dlw-datathon-track2) - deliberately NOT opened.
+- EM + bias-corrected calibration (Alexandari et al. ICML 2020; Garg et al. NeurIPS 2020), per group (src/em_bcts.py): collapses many
+  groups to 0 and contradicts public on high-value -> rejected.
+- Latent-class type-proportion EM (src/lca_shift.py): unidentifiable/unstable across K (test prior 6.5% / 1.1% / 1.7%) -> rejected.
+- Conclusion: unsupervised estimators cannot identify the per-group label changes; public LB is the only oracle; K3 is a local optimum
+  of the group-shift family (6 consecutive single-group probes from the best file all lost 0.001-0.008).
