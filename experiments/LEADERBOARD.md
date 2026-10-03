@@ -177,3 +177,5 @@ Packages: ../Track2_R1op_package and ../Track2_Q30op_package (both sandbox-verif
 - Greedy blend search over 151 stored OOFs (src/greedy_blend.py): only degree-3 interaction LR survives (held-out +0.0009); fresh seeds (src/poly3_fresh.py)
   w0.1: +0.0002/+0.0051/+0.0016/+0.0028.
 | tmpl/R3op_package_output.csv (= ../Track2_R3op_package/predictions_R3op.csv) | 7cdfaac8ee | ? |
+| tmpl/R3op_package_output.csv | 7cdfaac8ee | 0.23260 (ehh: -0.0017 vs R2op; degree-3 member did not transfer) |
+Final: R2op (../Track2_R2op_package, 0.23434 public, sandbox-verified, includes operating-point shift for F1/recall). Search stopped here.
