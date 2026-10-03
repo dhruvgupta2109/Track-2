@@ -156,3 +156,11 @@ Next: K6 = K3 with nd_old/high-value shifts removed at clean hours 5,6,7,21,22 (
   candidate scoring over the hypothesis grid (src/tmpl_decide2.py): C1 (T2 box unshifted) mean +0.010..+0.011, worst -0.0008; C7 (T2 -1, out-of-box +0.5) mean ~+0.012, +0.038 if T2 legit, -0.0105 if 5%.
 | tmpl/C1_Q30_T2box_unshift.csv | 9422baa279 | ? |
 | tmpl/C7_Q30_T2box-1_hvout+0.5.csv | bfc1046551 | ? |
+| tmpl/C1_Q30_T2box_unshift.csv | 9422baa279 | 0.23277 (= Q30: T2 box is NOT legit) |
+| tmpl/C7_Q30_T2box-1_hvout+0.5.csv | bfc1046551 | 0.22841 |
+- Fits: T2 ~3.5-5% fraud (Q30 mean 5.1% == C1 mean 2.2% on public -> level ~3.5%); T1 (planted new-device box) ~0.2% (fits nd_old series, src/t1_fit.py);
+  T3 unknown. Extra test bursts = train LEGIT burst profile (MY/ID/SG), not a planted box. Multiple imputation for missing values: no CV gain (src/mi_cv.py).
+- Booklet: Round 1 = 60% PR-AUC + F1 + Recall. Q30 flags 18 rows at 0.5 (recall ~4%). Constant logit shift -> 0.5 = top 2.5% (F1-optimal region,
+  CV F1 ~0.30, expected test F1 0.24 / recall 0.27); ranking/PR-AUC unchanged.
+| tmpl/R1op_package_output.csv (= ../Track2_R1op_package/predictions_R1op.csv; Q30 + T2 level 0.035 a0.3 + op shift) | 1c81db55b1 | ? |
+Packages: ../Track2_R1op_package and ../Track2_Q30op_package (both sandbox-verified).
