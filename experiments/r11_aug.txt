@@ -1,0 +1,21 @@
+aug none (v5 via augment path)           std 0.2475 (d +0.0000)  hnW 0.2059 (d +0.0000)  folds+ 0.0
+aug smote n=1000 w=0.25                  std 0.2442 (d -0.0033)  hnW 0.2010 (d -0.0049)  folds+ 0.3
+aug smote n=3000 w=0.1                   std 0.2449 (d -0.0026)  hnW 0.2018 (d -0.0041)  folds+ 0.3
+aug smote n=3000 w=0.5                   std 0.2356 (d -0.0120)  hnW 0.1889 (d -0.0170)  folds+ 0.3
+aug jitter n=1000 w=0.25                 std 0.2440 (d -0.0035)  hnW 0.2011 (d -0.0048)  folds+ 0.2
+aug jitter n=3000 w=0.1                  std 0.2450 (d -0.0025)  hnW 0.2011 (d -0.0048)  folds+ 0.3
+aug jitter n=3000 w=0.5                  std 0.2342 (d -0.0134)  hnW 0.1863 (d -0.0196)  folds+ 0.2
+aug copula n=1000 w=0.25                 std 0.2390 (d -0.0086)  hnW 0.1973 (d -0.0086)  folds+ 0.0
+aug copula n=3000 w=0.1                  std 0.2387 (d -0.0088)  hnW 0.1967 (d -0.0092)  folds+ 0.1
+aug copula n=3000 w=0.5                  std 0.2194 (d -0.0281)  hnW 0.1755 (d -0.0304)  folds+ 0.0
+aug smote_ordinary n=1000 w=0.25         std 0.2093 (d -0.0382)  hnW 0.1735 (d -0.0324)  folds+ 0.1
+aug smote_ordinary n=3000 w=0.1          std 0.2019 (d -0.0456)  hnW 0.1701 (d -0.0358)  folds+ 0.1
+aug smote_ordinary n=3000 w=0.5          std 0.0597 (d -0.1878)  hnW 0.0518 (d -0.1541)  folds+ 0.0
+aug smote+hardlegit n=1000 w=0.25        std 0.2452 (d -0.0023)  hnW 0.2019 (d -0.0040)  folds+ 0.3
+aug smote+hardlegit n=3000 w=0.1         std 0.2452 (d -0.0023)  hnW 0.2019 (d -0.0040)  folds+ 0.4
+aug smote+hardlegit n=3000 w=0.5         std 0.2363 (d -0.0113)  hnW 0.1907 (d -0.0152)  folds+ 0.2
+aug mix n=1000 w=0.25                    std 0.2384 (d -0.0092)  hnW 0.1978 (d -0.0081)  folds+ 0.0
+aug mix n=3000 w=0.1                     std 0.2366 (d -0.0109)  hnW 0.1948 (d -0.0111)  folds+ 0.1
+aug mix n=3000 w=0.5                     std 0.2134 (d -0.0341)  hnW 0.1684 (d -0.0375)  folds+ 0.0
+pseudo: bottom 30% legit, w0.25          std 0.2478 (d +0.0003)  hnW 0.2064 (d +0.0005)  folds+ 0.8
+pseudo: bottom 50% legit + top 0.2% fraud, w0.25 std 0.2467 (d -0.0009)  hnW 0.2049 (d -0.0010)  folds+ 0.3

@@ -1,0 +1,8 @@
+v5 + KDE ratio bw0.2                     std 0.2074 (d -0.0401)  hnW 0.1639 (d -0.0420)  folds+ 0.0
+v5 + KDE ratio bw0.35                    std 0.2466 (d -0.0009)  hnW 0.2041 (d -0.0018)  folds+ 0.4
+v5 + KDE ratio bw0.5                     std 0.2449 (d -0.0026)  hnW 0.2013 (d -0.0046)  folds+ 0.2
+v5 + KDE ratio bw0.8                     std 0.2445 (d -0.0030)  hnW 0.2000 (d -0.0059)  folds+ 0.1
+v5 + KDE legit-only bw0.35               std 0.2379 (d -0.0096)  hnW 0.1893 (d -0.0167)  folds+ 0.5
+KDE ratio bw0.35 replacing dr            std 0.2467 (d -0.0008)  hnW 0.2044 (d -0.0015)  folds+ 0.2
+v5 + GMM ratio (4 fraud / 32 legit comps) std 0.2156 (d -0.0319)  hnW 0.1733 (d -0.0326)  folds+ 0.1
+v5 + GMM ratio (2 / 16)                  std 0.2207 (d -0.0269)  hnW 0.1725 (d -0.0334)  folds+ 0.2

@@ -1,0 +1,16 @@
+device cuda
+mlp_big    standalone std 0.1950 hnW 0.1462  (20s)  | v5 std 0.2475 hnW 0.2059
+     rank 0.9 v5 + 0.1 mlp_big: d_std -0.0014 d_hnW -0.0017
+     rank 0.8 v5 + 0.2 mlp_big: d_std -0.0042 d_hnW -0.0052
+     rank 0.7 v5 + 0.3 mlp_big: d_std -0.0081 d_hnW -0.0105
+     rank 0.5 v5 + 0.5 mlp_big: d_std -0.0186 d_hnW -0.0234
+tabm16     standalone std 0.2092 hnW 0.1611  (14s)  | v5 std 0.2475 hnW 0.2059
+     rank 0.9 v5 + 0.1 tabm16: d_std -0.0004 d_hnW +0.0002
+     rank 0.8 v5 + 0.2 tabm16: d_std -0.0014 d_hnW -0.0007
+     rank 0.7 v5 + 0.3 tabm16: d_std -0.0032 d_hnW -0.0036
+     rank 0.5 v5 + 0.5 tabm16: d_std -0.0103 d_hnW -0.0126
+nca64      standalone std 0.2083 hnW 0.1622  (58s)  | v5 std 0.2475 hnW 0.2059
+     rank 0.9 v5 + 0.1 nca64: d_std -0.0005 d_hnW -0.0001
+     rank 0.8 v5 + 0.2 nca64: d_std -0.0029 d_hnW -0.0030
+     rank 0.7 v5 + 0.3 nca64: d_std -0.0063 d_hnW -0.0074
+     rank 0.5 v5 + 0.5 nca64: d_std -0.0140 d_hnW -0.0167

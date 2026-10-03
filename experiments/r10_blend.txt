@@ -1,0 +1,9 @@
+skmlp(v5 design) standalone 0.2291
+v5 + 0.1 skmlp                                d_std +0.0009 d_hnW +0.0013
+v5 + 0.15 skmlp                               d_std +0.0012 d_hnW +0.0021
+v5 + 0.2 skmlp                                d_std +0.0007 d_hnW +0.0016
+v5 0.8 + skmlp 0.1 + nca 0.1                  d_std +0.0011 d_hnW +0.0016
+v5 0.8 + skmlp 0.1 + tabm 0.1                 d_std +0.0010 d_hnW +0.0022
+v5 0.7 + skmlp .1 + tabm .1 + nca .1          d_std +0.0009 d_hnW +0.0016
+v5 0.7 + mean-rank(4 deep) 0.3                d_std +0.0009 d_hnW +0.0020
+v5 0.8 + mean-rank(4 deep) 0.2                d_std +0.0011 d_hnW +0.0022

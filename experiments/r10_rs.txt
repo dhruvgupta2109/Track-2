@@ -1,0 +1,5 @@
+v5 + random-subspace dr (30 x 6 dims)    std 0.2469 (d -0.0006)  hnW 0.2049 (d -0.0010)  folds+ 0.5
+random-subspace dr only (replace)        std 0.2450 (d -0.0025)  hnW 0.2050 (d -0.0009)  folds+ 0.1
+v5 + random-subspace dr (50 x 4 dims)    std 0.2470 (d -0.0005)  hnW 0.2043 (d -0.0016)  folds+ 0.5
+v5 + random-subspace dr (30 x 8 dims)    std 0.2474 (d -0.0001)  hnW 0.2060 (d +0.0001)  folds+ 0.5
+v5 + bagged-reference dr (20 x 70%)      std 0.2470 (d -0.0005)  hnW 0.2054 (d -0.0005)  folds+ 0.7

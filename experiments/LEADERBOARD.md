@@ -48,3 +48,20 @@ Paired public noise for rank-corr ~0.98 models: sd ~0.002 (12k rows) - 0.006 (6k
 | submissions/audit/d1_v5_plus_1h_velocity.csv | e54b8af53f | 0.18463 | 0.2477 | -0.0016 vs v5 (1h hypothesis not supported) |
 | submissions/audit/cand_lgb_mono.csv | e24832a48c | 0.16962 | 0.2122 | std CV right, test-like holdout view wrong |
 Current leader ~0.19010.
+
+## Round 9 public (portal hash = sha256 prefix)
+| file | sha256[:10] | public | local d_std vs v5 (fresh seeds) |
+|---|---|---|---|
+| submissions/audit/v6_rank90_skmlp10.csv | dc84bc23cd | 0.18453 | +0.0033..+0.0041 |
+| submissions/audit/v6_E1_knn_metric.csv | e60dcf1ca9 | 0.18237 | +0.0018..+0.0026 |
+Lesson: kNN metric change (drop amt_rel_avg, add burst) hurt public by -0.0039 despite consistent local gains (test bursts are legit-like);
+the sklearn-MLP rank blend added +0.0022 public on top of its base (local +0.0011). Quota: 100 CSV/24h.
+
+## Round 10-11 (deep / literature kNN / density / augmentation) - all vs v5 on 2x5 screen
+- Large MLP 0.195, TabM-mini 0.209, ModernNCA(PLR) 0.208 (overfit); regularised: ModernNCA 0.2389, NCA-linear 0.2369, MLP-small x10 0.2326, TabM32 0.2318.
+  Blends with v5 <= +0.0012 std.
+- Transductive pseudo-legit kNN references: local +-0.0002; test rank corr 0.997 (no lever).
+- KDE / GMM density ratios, random-subspace kNN, bagged-reference kNN: all <= v5.
+- Augmentation: SMOTE/jitter/copula/ordinary-fraud/hard-legit at extra weight: -0.0025..-0.19 (prior shift);
+  mass-preserving: +-0.0003 (no information gain); pseudo-labelled legit: +-0.0003.
+- New CSVs: submissions/audit/v5_rank85_skmlp15.csv (sha 005ff1c9b1), submissions/audit/v5_rank80_deep4_20.csv (sha 8b58245af9)

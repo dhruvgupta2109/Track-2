@@ -1,0 +1,13 @@
+mass-preserving smote alpha=0.1          std 0.2477 (d +0.0002)  hnW 0.2060 (d +0.0001)  folds+ 0.6
+mass-preserving smote alpha=0.25         std 0.2479 (d +0.0003)  hnW 0.2060 (d +0.0001)  folds+ 0.6
+mass-preserving smote alpha=0.5          std 0.2474 (d -0.0001)  hnW 0.2047 (d -0.0012)  folds+ 0.4
+mass-preserving jitter alpha=0.1         std 0.2477 (d +0.0002)  hnW 0.2058 (d -0.0001)  folds+ 0.5
+mass-preserving jitter alpha=0.25        std 0.2478 (d +0.0002)  hnW 0.2056 (d -0.0003)  folds+ 0.4
+mass-preserving jitter alpha=0.5         std 0.2472 (d -0.0003)  hnW 0.2041 (d -0.0018)  folds+ 0.5
+mass-preserving copula alpha=0.1         std 0.2472 (d -0.0004)  hnW 0.2059 (d -0.0000)  folds+ 0.3
+mass-preserving copula alpha=0.25        std 0.2454 (d -0.0022)  hnW 0.2039 (d -0.0020)  folds+ 0.2
+mass-preserving copula alpha=0.5         std 0.2427 (d -0.0048)  hnW 0.2010 (d -0.0049)  folds+ 0.2
+pseudo legit bottom 0.3 w=0.5            std 0.2474 (d -0.0001)  hnW 0.2059 (d -0.0000)  folds+ 0.3
+pseudo legit bottom 0.3 w=1.0            std 0.2472 (d -0.0003)  hnW 0.2060 (d +0.0001)  folds+ 0.4
+pseudo legit bottom 0.5 w=0.25           std 0.2475 (d +0.0000)  hnW 0.2060 (d +0.0001)  folds+ 0.5
+pseudo legit bottom 0.7 w=0.25           std 0.2475 (d +0.0000)  hnW 0.2061 (d +0.0002)  folds+ 0.5

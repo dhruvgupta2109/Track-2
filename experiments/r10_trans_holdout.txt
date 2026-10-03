@@ -1,0 +1,13 @@
+trans q=0 (v5)                           std 0.2475 (d +0.0000)  hnW 0.2059 (d +0.0000)  folds+ 0.0
+trans q=0.3 train_too                    std 0.2475 (d +0.0000)  hnW 0.2059 (d +0.0000)  folds+ 0.5
+trans q=0.5 train_too                    std 0.2473 (d -0.0002)  hnW 0.2058 (d -0.0001)  folds+ 0.4
+trans q=0.7 train_too                    std 0.2477 (d +0.0001)  hnW 0.2063 (d +0.0004)  folds+ 0.7
+trans q=0.85 train_too                   std 0.2478 (d +0.0002)  hnW 0.2064 (d +0.0005)  folds+ 0.7
+trans q=0.5 valid-only                   std 0.2475 (d +0.0000)  hnW 0.2059 (d +0.0000)  folds+ 0.6
+test-like holdout q=0: AP 0.4299 hnW 0.2964
+test-like holdout q=0.5: AP 0.4335 hnW 0.2981
+test-like holdout q=0.7: AP 0.4275 hnW 0.2925
+test-like holdout q=0.85: AP 0.4249 hnW 0.2883
+real test q=0.5: spearman v5 0.9970  bursts mean rank 0.065->0.066  top1% overlap 0.98
+real test q=0.7: spearman v5 0.9965  bursts mean rank 0.065->0.065  top1% overlap 0.98
+real test q=0.85: spearman v5 0.9963  bursts mean rank 0.065->0.066  top1% overlap 1.00
