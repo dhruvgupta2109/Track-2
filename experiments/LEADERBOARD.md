@@ -213,5 +213,11 @@ Cells (test n / in R2op top-300): young MY/ID/SG 60/19, young other 44/38, old M
 | probe/B2b_burst_MYIDSG-0.5_other+0.25.csv | 722fc4de92 | 0.23904 | MY/ID/SG side pushed further |
 Per country (test n / B2a top-300; train fraud rate): young OTHER 44/43 (65%), old OTHER 26/26 (28%), young ID 22/9 (50%), young MY 28/6 (31%),
 old ID 80/13 (8%), old MY 100/12 (5%), SG 100/3 (0-2%).
-| probe/C1_burst_MYIDSG-0.25_otherYoung+0.75_otherOld+0.25.csv | 94c0ef2e2d | ? | age split inside other-country bursts |
-| probe/C2_burst_MYIDSG0_other+0.5.csv | 0f20603746 | ? | MY/ID/SG demotion released |
+| probe/C1_burst_MYIDSG-0.25_otherYoung+0.75_otherOld+0.25.csv | 94c0ef2e2d | 0.23702 | age split inside other-country bursts |
+| probe/C2_burst_MYIDSG0_other+0.5.csv | 0f20603746 | **0.24174** (best) | MY/ID/SG demotion released |
+- Local burst-cell emulator (src/burst_local.py; 6 files differing only in 3 burst cells): fits all within ~0.001, LOO RMSE 0.003;
+  cell deltas vs R2op: MY/ID/SG -0.2, other young +0.5, other old +1.4..+1.6. The old-other conclusion depends on C1 (fit without C1 reverses it);
+  history agrees with it (P1: all old bursts -0.5 more -> -0.0063). EV of old-other +1.0 ~ +0.002 at P(C1 reading)=0.7.
+- Package ../Track2_C2_package (R2op notebook + burst-by-country shifts before the operating point): reproduces scored C2 (max diff 1.1e-16,
+  identical ranking), sandbox all 3 modes pass.
+| probe/D1_burst_MYIDSG0_otherYoung+0.5_otherOld+1.0.csv | e2fa4fb2f3 | ? | only the 26 old other-country bursts move (+0.5 -> +1.0) |
