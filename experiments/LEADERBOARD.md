@@ -84,3 +84,14 @@ New: LBmix_emulator_optimum.csv (ffcc529417, emulator +0.003 vs v5), TOP5_public
 - Saerens EM per segment (src/em_shift.py, experiments/em_shift_segments.csv): burst test prior ~7.0% (shift -1.45);
   new_device & age>365 -> ~0 (strong down-shift); EM unstable for other segments (covariate shift confounds).
 - Sweep CSVs in submissions/shift/: S1 burst-1.5, S2 burst-2.0, S3 burst-1.0+ndold-0.5, S4 burst-1.0+ndold-1.0, S5 burst-1.5+ndold-0.75.
+
+## Shift round 2 (3 Oct ~18:52-18:57)
+| file | sha256[:10] | public |
+|---|---|---|
+| shift/S3_burst-1.0_ndold-0.5.csv | f570586529 | **0.20453** (best, rank 3) |
+| shift/S1_burst-1.5.csv | 6e83e0fde2 | 0.19293 |
+| shift/R2_burst-1.0_ndold-0.7_bigold-0.5.csv | a448b752a7 | 0.20171 |
+| shift/R1_burst-1.0_ndold-0.7_bigold-1.1.csv | 5887e82930 | 0.19707 |
+EM per-segment direction matched all three tested segments (burst -, ndold -, bigold + => down-shift hurts); enrichment rule did not (bigold).
+Best package copied to ../BEST_S3_v5_burst_ndold_0.20453 (sandbox-verified, maxdiff 2e-16).
+Next: G1_generator_formula.csv (a2687f3a53, user request), V1_S3_plus_travel-0.5.csv (df00e35171, EM says travel ~0%).
