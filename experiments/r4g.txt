@@ -1,0 +1,43 @@
+=== Phase 5: OOF target encoding (nested inside each training fold) ===
+v4_TE_replace_onehot         std=0.2410 std_median_fold=0.2479 std_sd_fold=0.0349 std_min_fold=0.1701 std_max_fold=0.3362 covW=0.3681 hnW=0.1939 roc=0.7739 hn_recall@top2%=0.2703 d_std_ci90=+0.0011..+0.0189 d_hnW_ci90=+0.0023..+0.0260 P(d_hnW>0)=0.9800
+v4_TE_plus_onehot            std=0.2414 std_median_fold=0.2520 std_sd_fold=0.0345 std_min_fold=0.1768 std_max_fold=0.3297 covW=0.3715 hnW=0.1980 roc=0.7752 hn_recall@top2%=0.2691 d_std_ci90=+0.0038..+0.0189 d_hnW_ci90=+0.0099..+0.0300 P(d_hnW>0)=1.0000
+
+=== Phase 6: AP by regime (v3 vs v4 OOF) ===
+obvious(>=2 signals)   n=  2646 fraud= 159 rate=0.0601 share_of_fraud=0.45  AP v3=0.4453 v4=0.4679  lift v4=7.8x
+ordinary(0)            n=  9923 fraud=  96 rate=0.0097 share_of_fraud=0.27  AP v3=0.0208 v4=0.0222  lift v4=2.3x
+weak(1 signal)         n=  7431 fraud=  98 rate=0.0132 share_of_fraud=0.28  AP v3=0.0482 v4=0.0483  lift v4=3.7x
+
+=== Phase 13: does importance weighting predict shifted-holdout AP when ONLY covariate shift exists? ===
+   unweighted_CV  weighted_CV  actual_shifted_holdout  holdout_prev
+0         0.2351       0.2735                  0.2159        0.0191
+1         0.1781       0.2876                  0.4378        0.0198
+2         0.2254       0.3181                  0.2950        0.0190
+3         0.2238       0.3094                  0.2851        0.0175
+4         0.2339       0.2704                  0.2446        0.0221
+5         0.1975       0.2771                  0.3689        0.0190
+mean {'unweighted_CV': 0.2156, 'weighted_CV': 0.2893, 'actual_shifted_holdout': 0.3079, 'holdout_prev': 0.0194}
+abs error unweighted 0.0987  weighted 0.0621
+
+=== Phase 15: label ambiguity / noise floor ===
+frauds in coarse cells that also contain legit rows: 0.742 of all frauds
+fraud rows by their cell's fraud rate: <2x base 0.12 | <5x base 0.35 | median cell rate 0.214
+most confident FNs (fraud, lowest OOF p):
+ transaction_amount  transaction_hour merchant_category country transaction_channel  transactions_last_24h  spend_last_24h  account_age  new_device  transactions_last_1h     p
+              25.06                15           grocery      SG        card_present                    2.0           33.13        609.0         0.0                   0.0 0.002
+              38.76                16           grocery      SG          mobile_app                    1.0            0.00       3435.0         0.0                   1.0 0.002
+               3.58                16         transport      SG        card_present                    5.0           87.32        116.0         0.0                   0.0 0.002
+              13.69                19     food_delivery      SG        card_present                    5.0          108.78       1523.0         0.0                   1.0 0.003
+              25.31                22            retail      SG        card_present                    2.0          149.18        235.0         0.0                   0.0 0.003
+               6.55                17         transport      SG           ecommerce                    3.0           52.58       2262.0         0.0                   0.0 0.003
+               3.79                22         transport      SG        card_present                    5.0           93.88         65.0         0.0                   1.0 0.003
+              16.07                19            gaming      GB          mobile_app                    2.0           18.44       2779.0         0.0                   0.0 0.003
+most confident FPs (legit, highest OOF p):
+ transaction_amount  transaction_hour merchant_category country transaction_channel  transactions_last_24h  spend_last_24h  account_age  new_device  transactions_last_1h     p
+            2856.88                14     cash_transfer      US           ecommerce                   17.0         4084.48         46.0         1.0                   5.0 0.729
+            3109.47                15     cash_transfer      ID           ecommerce                   17.0         3501.54        131.0         1.0                   7.0 0.662
+            2289.29                10            luxury      US       bank_transfer                   18.0         2065.25         83.0         1.0                   4.0 0.661
+               3.21                 0       electronics      JP           ecommerce                   26.0         1631.39         27.0         1.0                   5.0 0.646
+              36.44                 1     cash_transfer      JP           ecommerce                   12.0         1243.90         37.0         1.0                   4.0 0.641
+            1301.61                14     cash_transfer      VN           ecommerce                   16.0         4305.69         89.0         1.0                   7.0 0.637
+            1499.51                11       electronics      JP       bank_transfer                   17.0         3100.85         46.0         1.0                   7.0 0.629
+              38.72                 2            gaming      AU          mobile_app                   15.0          752.07         13.0         1.0                   5.0 0.624

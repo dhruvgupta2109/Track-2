@@ -1,0 +1,15 @@
+variant,pr_auc,pr_auc_tw
+full,0.2286,0.3423
+balanced,0.1907,0.2732
+-velocity_1h,0.2313,0.3523
+-velocity_24h,0.2173,0.3101
+-amount,0.2153,0.3273
+-spend,0.2284,0.3418
+-age,0.207,0.3048
+-new_device,0.1882,0.3014
+-night,0.223,0.3324
+-foreign,0.2285,0.3421
+-merchant_category,0.2225,0.3337
+-country,0.2284,0.3424
+-transaction_channel,0.2254,0.3384
+-hc,0.2268,0.3381

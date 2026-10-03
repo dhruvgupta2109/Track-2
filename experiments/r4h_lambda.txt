@@ -1,0 +1,4 @@
+lambda=0: std 0.2411  hnW 0.1970 (hnW is self-referential for lambda>0)
+lambda=0.25: std 0.2372  hnW 0.2089 (hnW is self-referential for lambda>0)
+lambda=0.5: std 0.2298  hnW 0.2164 (hnW is self-referential for lambda>0)
+lambda=1.0: std 0.2059  hnW 0.2177 (hnW is self-referential for lambda>0)

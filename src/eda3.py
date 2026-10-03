@@ -1,0 +1,16 @@
+import pandas as pd, numpy as np, warnings; warnings.filterwarnings("ignore")
+pd.set_option("display.width",200); pd.set_option("display.max_columns",50)
+tr=pd.read_csv("train.csv"); te=pd.read_csv("test.csv")
+for name,d in [("train",tr),("test",te)]:
+    print(name); print(d.groupby("merchant_category").transaction_amount.describe(percentiles=[.5,.9,.99])[["count","50%","90%","99%","max"]].round(0))
+for name,d in [("train",tr),("test",te)]:
+    print(name, "amt>2000 by cat", d[d.transaction_amount>2000].merchant_category.value_counts(normalize=True).round(2).to_dict())
+    print(name, "account_age hist", np.histogram(d.account_age.dropna(),bins=[0,30,90,365,730,1500,2500,3999,4001])[0]/d.account_age.notna().sum())
+    print(name, "tx24 hist", d.transactions_last_24h.value_counts(normalize=True).sort_index().round(3).to_dict())
+    print(name, "tx1h hist", d.transactions_last_1h.value_counts(normalize=True).sort_index().round(3).to_dict())
+    print(name, "new_device by channel", d.groupby("transaction_channel").new_device.mean().round(3).to_dict())
+    print(name, "missing co-occurrence rows with >=1 NA", d.isna().any(axis=1).mean(), "rows >=2", (d.isna().sum(1)>=2).mean())
+print(tr[tr.transaction_amount>2000].groupby("merchant_category").fraud.agg(["size","mean"]))
+print("fraud by acct age bins", tr.groupby(pd.cut(tr.account_age,[0,30,90,365,730,1500,2500,3999,4001])).fraud.agg(["size","mean"]))
+print("fraud by tx1h", tr.groupby("transactions_last_1h").fraud.agg(["size","mean"]))
+print("fraud by tx24", tr.groupby("transactions_last_24h").fraud.agg(["size","mean"]))

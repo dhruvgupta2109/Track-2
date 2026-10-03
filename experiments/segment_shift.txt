@@ -1,0 +1,61 @@
+BURST rows: train fraud / train legit / test (medians & means)
+                       tr_fraud  tr_legit      test
+transaction_amount        51.50    61.295    64.355
+account_age               63.00  1203.000  1069.000
+transactions_last_24h     22.00    20.000    21.000
+transactions_last_1h       5.00     7.000     7.000
+new_device                 1.00     0.000     0.000
+spend_last_24h          1844.23  1153.430  1201.450
+transaction_hour           3.00    11.000    12.000
+                       tr_fraud  tr_legit     test
+transaction_amount       696.42    333.25   328.07
+account_age              558.04   1252.60  1145.05
+transactions_last_24h     21.02     20.76    21.10
+transactions_last_1h       5.78      6.64     6.48
+new_device                 0.79      0.37     0.44
+spend_last_24h          2640.43   1733.04  1798.42
+transaction_hour           7.23     10.93    10.91
+burst channel mix
+                       trF   trL    te
+transaction_channel                  
+ecommerce            0.57  0.53  0.52
+bank_transfer        0.26  0.11  0.10
+mobile_app           0.17  0.36  0.38
+burst category mix
+                     trF   trL    te
+merchant_category                  
+cash_transfer      0.40  0.06  0.06
+food_delivery      0.19  0.20  0.21
+electronics        0.15  0.07  0.09
+gaming             0.11  0.20  0.24
+luxury             0.08  0.05  0.06
+transport          0.06  0.19  0.18
+retail             0.02  0.22  0.16
+burst country SG share: trF 0.02 trL 0.28 te 0.25
+
+expected #frauds in test by segment under train P(y|x) (sum of v3 probs):
+burst train n=217 rate=0.244 | test n=406 sum p=78.5 mean p=0.193 | train mean p=0.244
+young train n=2540 rate=0.044 | test n=1086 sum p=70.9 mean p=0.065 | train mean p=0.044
+big train n=983 rate=0.060 | test n=1559 sum p=76.0 mean p=0.049 | train mean p=0.060
+new_device train n=1800 rate=0.075 | test n=1799 sum p=126.8
+total expected test frauds 273.1 (2.28%)
+
+test new_device by burst {False: 0.144, True: 0.436} train {False: 0.086, True: 0.475}
+train fraud by burst x new_device
+                    size   mean
+burst new_device              
+False 0.0         17962  0.012
+      1.0          1697  0.055
+True  0.0           114  0.096
+      1.0           103  0.408
+test count burst x new_device
+ burst  new_device
+False  0.0           9683
+       1.0           1625
+True   0.0            225
+       1.0            174
+dtype: int64
+cash_transfer train frac>2000 0.058 fraud|>2000 0.103 fraud|<=2000 0.044 | test frac>2000 0.294
+electronics train frac>2000 0.072 fraud|>2000 0.083 fraud|<=2000 0.036 | test frac>2000 0.281
+luxury train frac>2000 0.210 fraud|>2000 0.049 fraud|<=2000 0.054 | test frac>2000 0.509
+travel train frac>2000 0.116 fraud|>2000 0.031 fraud|<=2000 0.023 | test frac>2000 0.298

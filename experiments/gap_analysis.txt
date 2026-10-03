@@ -1,0 +1,74 @@
+=== A. PR-AUC vs prevalence (subsampling OOF, 200 draws; uses each repeat's OOF) ===
+ prevalence  pr_auc_mean     p5    p95  roc_auc
+     0.0025       0.0883 0.0379 0.1512   0.7804
+     0.0050       0.1261 0.0823 0.1712   0.7796
+     0.0075       0.1537 0.1207 0.1944   0.7803
+     0.0100       0.1761 0.1456 0.2076   0.7794
+     0.0125       0.1971 0.1727 0.2200   0.7798
+     0.0150       0.2143 0.1991 0.2321   0.7798
+     0.0177       0.2307 0.2278 0.2336   0.7797
+     0.0200       0.2437 0.2379 0.2501   0.7797
+     0.0250       0.2688 0.2604 0.2774   0.7798
+     0.0300       0.2907 0.2807 0.3009   0.7798
+     0.0400       0.3258 0.3139 0.3373   0.7797
+AP sampling noise for a 12000-row set at 1.77%: mean 0.2306 sd 0.0311; 6000 rows: sd ~0.0440
+
+=== B. adversarial validation (several classifiers, 5-fold OOF) ===
+adv ROC-AUC lgb_all            0.6698
+adv ROC-AUC lgb_no_missing     0.6683
+adv ROC-AUC lgb_missing_only   0.5436
+adv ROC-AUC logreg             0.6544
+   single-feature adv AUC log_amt                0.5528
+   single-feature adv AUC transaction_hour       0.5265
+   single-feature adv AUC transactions_last_24h  0.5705
+   single-feature adv AUC transactions_last_1h   0.5465
+   single-feature adv AUC log_spend              0.5553
+   single-feature adv AUC log_age                0.5989
+   single-feature adv AUC new_device             0.5363
+   single-feature adv AUC amt_rel_cat            0.5611
+   single-feature adv AUC amt_rel_avg            0.5429
+   single-feature adv AUC merchant_category      0.5437
+   single-feature adv AUC country                0.5423
+   single-feature adv AUC transaction_channel    0.5481
+gain importance (no-missing model): [(np.float64(22765.0), 'log_age'), (np.float64(8079.0), 'log_amt'), (np.float64(7996.0), 'transactions_last_24h'), (np.float64(7567.0), 'amt_rel_cat'), (np.float64(7371.0), 'amt_rel_avg'), (np.float64(7166.0), 'merchant_category'), (np.float64(6572.0), 'new_device'), (np.float64(5541.0), 'log_spend'), (np.float64(4895.0), 'transaction_channel'), (np.float64(4886.0), 'transactions_last_1h'), (np.float64(4549.0), 'country'), (np.float64(3775.0), 'transaction_hour')]
+
+=== C. missingness ===
+                        train    test    diff   ratio
+transaction_amount     0.0000  0.0000  0.0000     NaN
+transaction_hour       0.0000  0.0000  0.0000     NaN
+merchant_category      0.0056  0.0216  0.0159  3.8201
+country                0.0054  0.0223  0.0170  4.1745
+transaction_channel    0.0062  0.0237  0.0175  3.8482
+transactions_last_24h  0.0080  0.0244  0.0165  3.0713
+spend_last_24h         0.0066  0.0222  0.0156  3.3712
+account_age            0.0068  0.0220  0.0151  3.2117
+new_device             0.0062  0.0244  0.0182  3.9382
+transactions_last_1h   0.0071  0.0204  0.0133  2.8756
+train n_missing dist {0: 0.9512, 1: 0.0457, 2: 0.0031}
+test n_missing dist {0: 0.8614, 1: 0.0998, 2: 0.0351, 3: 0.0036, 4: 0.0001}
+fraud rate by n_missing (train) {'size': {0: 19025, 1: 913, 2: 62}, 'mean': {0: 0.0175, 1: 0.0208, 2: 0.0161}}
+missing in test by segment: n_missing>0 rate | burst 0.123 | new_device 0.133 | all 0.139
+missingness co-occurrence in test (pairs share):
+                       merchant_category  country  transaction_channel  transactions_last_24h  spend_last_24h  account_age  new_device  transactions_last_1h
+merchant_category                    259       18                   23                     26              17           23          21                    15
+country                               18      268                   16                     25              24           17          19                    17
+transaction_channel                   23       16                  284                     29              15           24          25                    20
+transactions_last_24h                 26       25                   29                    293              11           18          27                    22
+spend_last_24h                        17       24                   15                     11             267           15          18                    20
+account_age                           23       17                   24                     18              15          264          17                    19
+new_device                            21       19                   25                     27              18           17         293                    15
+transactions_last_1h                  15       17                   20                     22              20           19          15                   245
+
+=== D. fraud-model performance vs test-likeness (train rows, adv OOF lgb_no_missing) ===
+testlike_pct    n  fraud   rate     AP    ROC
+        0-20 4000     58 0.0145 0.0749 0.7116
+       20-40 4000     48 0.0120 0.1460 0.7212
+       40-60 4000     59 0.0148 0.1059 0.7598
+       60-80 4000     61 0.0152 0.0982 0.7139
+       80-90 2000     54 0.0270 0.3881 0.8619
+       90-95 1000     50 0.0500 0.5027 0.8709
+      95-100 1000     23 0.0230 0.5860 0.9051
+top 1%: TEST burst 0.66 new_dev 0.91 young 0.60 | TRAIN-OOF burst 0.53 new_dev 0.82 young 0.52 (train precision 0.40)
+top 2%: TEST burst 0.64 new_dev 0.77 young 0.38 | TRAIN-OOF burst 0.33 new_dev 0.78 young 0.45 (train precision 0.27)
+top 5%: TEST burst 0.45 new_dev 0.69 young 0.28 | TRAIN-OOF burst 0.17 new_dev 0.63 young 0.45 (train precision 0.14)
+predicted-prob threshold of train-top-2% = 0.096 ; share of TEST above it: 0.0355

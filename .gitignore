@@ -1,0 +1,5 @@
+.venv/
+.venv_clean/
+catboost_info/
+__pycache__/
+experiments/*.npy

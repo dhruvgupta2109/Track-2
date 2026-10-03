@@ -1,0 +1,99 @@
+AP 0.23297367606775762 ROC 0.7809052150051813 brier 0.01516519606849493 logloss 0.07271747193545731 prior-only brier 0.017338477500000005
+calibration by decile
+ q             0          1          2  ...          7          8          9
+pred     0.0025     0.0038     0.0048  ...     0.0163     0.0244     0.0896
+obs      0.0045     0.0045     0.0055  ...     0.0175     0.0175     0.0875
+n     2000.0000  2000.0000  2000.0000  ...  2000.0000  2000.0000  2000.0000
+
+[3 rows x 10 columns]
+top-bin calibration: top 1% pred 0.371 obs 0.4
+best F1 0.307 at thr 0.147: precision 0.394 recall 0.252, flagged 1.13%
+flag top  0.5% (  100): precision 0.560 recall 0.159  lift 31.7x  FP per TP 0.8
+flag top  1.0% (  200): precision 0.400 recall 0.227  lift 22.7x  FP per TP 1.5
+flag top  2.0% (  400): precision 0.270 recall 0.306  lift 15.3x  FP per TP 2.7
+flag top  5.0% ( 1000): precision 0.136 recall 0.385  lift 7.7x  FP per TP 6.4
+flag top 10.0% ( 2000): precision 0.087 recall 0.496  lift 5.0x  FP per TP 10.4
+flag top 20.0% ( 4000): precision 0.052 recall 0.595  lift 3.0x  FP per TP 18.0
+max recall at precision>=0.5: 0.190
+max recall at precision>=0.3: 0.286
+max recall at precision>=0.2: 0.334
+                          n  fraud   rate  ...  precision@5%  flag_rate     AP
+transaction_channel                        ...                                
+bank_transfer        2009.0   57.0  0.028  ...         0.206      0.085  0.425
+card_present         7189.0   73.0  0.010  ...         0.072      0.023  0.075
+ecommerce            5507.0  132.0  0.024  ...         0.176      0.074  0.341
+mobile_app           5172.0   87.0  0.017  ...         0.070      0.047  0.096
+NaN                   123.0    4.0  0.033  ...         0.000      0.073  0.100
+
+[5 rows x 7 columns]
+                        n  fraud   rate  ...  precision@5%  flag_rate     AP
+merchant_category                        ...                                
+cash_transfer      1498.0   71.0  0.047  ...         0.178      0.154  0.440
+electronics        1524.0   60.0  0.039  ...         0.172      0.134  0.319
+entertainment      1407.0   14.0  0.010  ...         0.000      0.016  0.013
+food_delivery      2304.0   38.0  0.016  ...         0.177      0.034  0.321
+gaming             1339.0   21.0  0.016  ...         0.133      0.056  0.246
+grocery            3566.0   27.0  0.008  ...         0.026      0.011  0.036
+luxury              586.0   31.0  0.053  ...         0.152      0.179  0.326
+retail             2601.0   25.0  0.010  ...         0.083      0.028  0.045
+transport          2387.0   21.0  0.009  ...         0.108      0.016  0.059
+travel             1094.0   26.0  0.024  ...         0.062      0.088  0.104
+utilities          1581.0   19.0  0.012  ...         0.079      0.024  0.071
+NaN                 113.0    0.0  0.000  ...         0.000      0.035    NaN
+
+[12 rows x 7 columns]
+                  n  fraud   rate  recall@5%  precision@5%  flag_rate     AP
+new_device                                                                  
+0.0         18076.0  218.0  0.012       0.11         0.066      0.020  0.045
+1.0          1800.0  135.0  0.075       0.83         0.177      0.351  0.509
+NaN           124.0    0.0  0.000        NaN         0.000      0.024    NaN
+                   n  fraud   rate  recall@5%  precision@5%  flag_rate     AP
+age_bin                                                                      
+(0, 90]       2568.0  113.0  0.044      0.646         0.160      0.177  0.448
+(1500, 5000]  4869.0   66.0  0.014      0.242         0.104      0.032  0.061
+(365, 1500]   9760.0  104.0  0.011      0.154         0.068      0.024  0.058
+(90, 365]     2666.0   67.0  0.025      0.448         0.196      0.057  0.284
+nan            137.0    3.0  0.022      0.333         0.250      0.029  0.377
+             n  fraud   rate  recall@5%  precision@5%  flag_rate     AP
+burst                                                                  
+False  19783.0  300.0  0.015      0.283         0.102      0.042  0.134
+True     217.0   53.0  0.244      0.962         0.302      0.779  0.710
+                        n  fraud   rate  ...  precision@5%  flag_rate     AP
+amt_bin                                  ...                                
+(2.499, 31.83]     5002.0   56.0  0.011  ...         0.190      0.017  0.255
+(205.198, 9000.0]  5000.0  180.0  0.036  ...         0.147      0.124  0.283
+(31.83, 75.125]    4998.0   53.0  0.011  ...         0.150      0.025  0.278
+(75.125, 205.198]  5000.0   64.0  0.013  ...         0.060      0.034  0.077
+
+[4 rows x 7 columns]
+               n  fraud   rate  recall@5%  precision@5%  flag_rate     AP
+country                                                                  
+AU         584.0   17.0  0.029      0.706         0.240      0.086  0.465
+GB         505.0   16.0  0.032      0.500         0.182      0.087  0.460
+ID         840.0   34.0  0.040      0.471         0.147      0.130  0.272
+JP         382.0   13.0  0.034      0.538         0.233      0.079  0.362
+MY        1225.0   18.0  0.015      0.667         0.169      0.058  0.346
+PH         581.0   20.0  0.034      0.750         0.234      0.110  0.523
+SG       13931.0  182.0  0.013      0.165         0.064      0.034  0.062
+TH         644.0   11.0  0.017      0.727         0.182      0.068  0.465
+US         693.0   22.0  0.032      0.636         0.237      0.085  0.373
+VN         508.0   19.0  0.037      0.737         0.250      0.110  0.577
+NaN        107.0    1.0  0.009      0.000         0.000      0.028  0.053
+fraud rank percentile quantiles {0.1: 0.365, 0.25: 0.646, 0.5: 0.897, 0.75: 0.989}
+share of frauds ranked below 50th pct: 0.17
+hard FN profile (median)
+ transaction_amount        36.22
+account_age              730.50
+transactions_last_24h      4.00
+transactions_last_1h       0.50
+new_device                 0.00
+dtype: float64 
+legit median
+ transaction_amount        74.26
+account_age              796.00
+transactions_last_24h      4.00
+transactions_last_1h       1.00
+new_device                 0.00
+dtype: float64
+hard FN channel/category {'card_present': 20, 'mobile_app': 20, 'ecommerce': 14, 'bank_transfer': 6} {'food_delivery': 11, 'transport': 11, 'grocery': 10, 'entertainment': 8, 'utilities': 5}
+top-100 high-confidence FPs: new_device 0.74 burst 0.53 young 0.44 median amt 471.41499999999996
