@@ -1,0 +1,19 @@
+best blend per partner (vs v5 std 0.2490 hnW 0.2070):
+       partner  kind    w   d_std   d_hnW
+subtype_device  rank 0.05  0.0009  0.0020
+ moe_newdevice  rank 0.10  0.0006  0.0013
+ subtype_young  rank 0.05  0.0005  0.0030
+   v4_knn_full  prob 0.30  0.0004 -0.0008
+   catboost_d4  prob 0.10  0.0004 -0.0001
+   v4_burst_nd  prob 0.20  0.0003  0.0006
+     v1_lr_eng  rank 0.05  0.0002 -0.0003
+      lgb_mono logit 0.05  0.0001  0.0004
+v5b_burstnight  prob 0.05  0.0001 -0.0001
+         v3_lr  rank 0.05 -0.0000 -0.0002
+    extratrees  rank 0.05 -0.0002 -0.0008
+        histgb logit 0.05 -0.0003 -0.0003
+subtype_device rank w=0.05: d_std90 -0.0011..+0.0028 P>0 0.71 | d_hnW90 -0.0001..+0.0038 P>0 0.93 | prev {0.0075: 0.0009, 0.01: 0.0009, 0.0177: 0.0009}
+moe_newdevice rank w=0.1: d_std90 -0.0014..+0.0014 P>0 0.53 | d_hnW90 -0.0017..+0.0022 P>0 0.58 | prev {0.0075: 0.0009, 0.01: 0.0006, 0.0177: 0.0006}
+subtype_young rank w=0.05: d_std90 -0.0015..+0.0023 P>0 0.67 | d_hnW90 +0.0011..+0.0050 P>0 0.99 | prev {0.0075: 0.0006, 0.01: 0.0003, 0.0177: 0.0005}
+v4_knn_full prob w=0.3: d_std90 -0.0018..+0.0021 P>0 0.54 | d_hnW90 -0.0044..+0.0013 P>0 0.20 | prev {0.0075: 0.0003, 0.01: 0.0, 0.0177: 0.0004}
+catboost_d4 prob w=0.1: d_std90 -0.0016..+0.0015 P>0 0.53 | d_hnW90 -0.0022..+0.0016 P>0 0.47 | prev {0.0075: -0.0002, 0.01: 0.0001, 0.0177: 0.0004}

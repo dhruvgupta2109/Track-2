@@ -1,0 +1,6 @@
+b1_v5_rank95_stdevice        spearman_v5 0.9995 spearman_v4 0.9759 rows 12000 range [0.0001,1.0000]
+b2_v5_rank95_styoung         spearman_v5 0.9995 spearman_v4 0.9768 rows 12000 range [0.0014,1.0000]
+c1_v5_knn_catmetric          spearman_v5 0.9706 spearman_v4 0.9614 rows 12000 range [0.0010,0.9077]
+d1_v5_plus_1h_velocity       spearman_v5 0.9987 spearman_v4 0.9752 rows 12000 range [0.0011,0.9178]
+v5a_lr                       spearman_v5 0.9820
+lgb_mono                     spearman_v5 0.7779

@@ -1,0 +1,12 @@
+v5_emb_cat0.5                std=0.2490 std_median_fold=0.2534 std_sd_fold=0.0361 std_min_fold=0.1819 std_max_fold=0.3521 covW=0.3812 hnW=0.2071 roc=0.7771 hn_recall@top2%=0.2708 d_std_ci90=-0.0012..+0.0019 d_hnW_ci90=-0.0012..+0.0022 P(d_hnW>0)=0.5825
+    prev deltas vs v5: {0.0075: 0.0005, 0.01: 0.0002, 0.0177: -0.0}
+v5_emb_cat1                  std=0.2491 std_median_fold=0.2518 std_sd_fold=0.0353 std_min_fold=0.1792 std_max_fold=0.3478 covW=0.3834 hnW=0.2090 roc=0.7793 hn_recall@top2%=0.2669 d_std_ci90=-0.0027..+0.0035 d_hnW_ci90=-0.0022..+0.0060 P(d_hnW>0)=0.7175
+    prev deltas vs v5: {0.0075: 0.002, 0.01: 0.0007, 0.0177: 0.0001}
+v5_emb_hour1                 std=0.2478 std_median_fold=0.2511 std_sd_fold=0.0351 std_min_fold=0.1787 std_max_fold=0.3481 covW=0.3790 hnW=0.2053 roc=0.7768 hn_recall@top2%=0.2720 d_std_ci90=-0.0024..+0.0005 d_hnW_ci90=-0.0035..+0.0001 P(d_hnW>0)=0.0625
+    prev deltas vs v5: {0.0075: -0.0013, 0.01: -0.0013, 0.0177: -0.0012}
+v5_emb_cat0.5_hour0.5        std=0.2493 std_median_fold=0.2525 std_sd_fold=0.0354 std_min_fold=0.1849 std_max_fold=0.3518 covW=0.3801 hnW=0.2066 roc=0.7780 hn_recall@top2%=0.2714 d_std_ci90=-0.0011..+0.0026 d_hnW_ci90=-0.0019..+0.0024 P(d_hnW>0)=0.5700
+    prev deltas vs v5: {0.0075: 0.0001, 0.01: 0.0002, 0.0177: 0.0003}
+v5_emb_+spend+young          std=0.2491 std_median_fold=0.2547 std_sd_fold=0.0348 std_min_fold=0.1819 std_max_fold=0.3432 covW=0.3797 hnW=0.2074 roc=0.7758 hn_recall@top2%=0.2703 d_std_ci90=-0.0020..+0.0031 d_hnW_ci90=-0.0017..+0.0050 P(d_hnW>0)=0.7425
+    prev deltas vs v5: {0.0075: -0.0001, 0.01: 0.0004, 0.0177: 0.0001}
+v5_emb_-avg                  std=0.2486 std_median_fold=0.2533 std_sd_fold=0.0368 std_min_fold=0.1785 std_max_fold=0.3491 covW=0.3831 hnW=0.2068 roc=0.7760 hn_recall@top2%=0.2720 d_std_ci90=-0.0029..+0.0002 d_hnW_ci90=-0.0034..-0.0002 P(d_hnW>0)=0.0350
+    prev deltas vs v5: {0.0075: 0.0006, 0.01: -0.0, 0.0177: -0.0005}

@@ -26,3 +26,15 @@ If 0.17617 is v1/v2: v1->v3 std +0.0017, hnW +0.0047, public -0.0041 (direction 
 | v5a = v4 + age<120 + ctx amount | 0.2440 | +0.0027/+0.0019/+0.0014 | +0.0050/+0.0045/+0.0034 | 0.2026 | 0.2011 | 0.427 / 0.290 | sub_v5a_lr.csv |
 Rejected this round: isolation forest, legit-density, WoE bins, MoE (nd/young/foreign), ET/RF/HGB, hard-negative specialists, band reranker,
 subtype detectors, all stacking except kNN, external augmentation, amount steps, t1>=3.
+
+## Exact public mapping (md5 of CSV, first 10 hex)
+| file | md5 | public |
+|---|---|---|
+| submissions/sub_v1_lr_eng.csv (== sub_v2_lr_hardened.csv, identical bytes) | 9186008608 | 0.17617 (by elimination; v0 never requested - user to confirm) |
+| submissions/sub_v3_lr.csv | 43744b16d0 | 0.17206 |
+| submissions/sub_v4_lr.csv | aecf532c43 | 0.17966 |
+| submissions/sub_v4_lambda05_probe.csv | 72badb25e7 | 0.16822 |
+| submissions/sub_v5_lr_knn.csv | 42b34e09bb | 0.18626 (assumed - only new file requested) |
+| submissions/sub_v5b_burstnight_probe.csv | 869c1d1923 | unknown / not reported |
+Public/std-CV delta ratio (vs v3): v4 0.70, v5 0.76; hnW overstates ~2x; v1 vs v3 public +0.0041 vs expected -0.003 (~1.2 paired sd, noise).
+Paired public noise for rank-corr ~0.98 models: sd ~0.002 (12k rows) - 0.006 (6k rows).
