@@ -1,0 +1,3 @@
+seed 99: k01_merchant_pool +0.0024/+0.0058  k04_multimetric -0.0009/-0.0005  k02_drop_amt_rel_avg +0.0005/+0.0003  k03_add_cash -0.0001/+0.0030
+seed 314: k01_merchant_pool +0.0042/+0.0095  k04_multimetric -0.0005/+0.0006  k02_drop_amt_rel_avg +0.0006/+0.0008  k03_add_cash +0.0039/+0.0090
+seed 4242: k01_merchant_pool +0.0057/+0.0104  k04_multimetric -0.0006/+0.0001  k02_drop_amt_rel_avg +0.0019/+0.0025  k03_add_cash +0.0027/+0.0062
