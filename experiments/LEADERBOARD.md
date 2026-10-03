@@ -110,3 +110,8 @@ injected bursts are old-account bursts. Next: X1 (burst old -1.25, young 0, ndol
 | shift/X1_burstOld-1.25_burstYoung0_ndold-0.75.csv | 208c516581 | 0.18152 (young bursts must be demoted: mostly legit in test) |
 W2 top-120: 55 young bursts (46%). No-velocity v5 (NV, 38c139a24e) still keeps 47 young bursts in top-120 -> not submitted.
 Next: P1 young -2.0/old -1.0, P2 young -1.0/old -0.5 (ndold -0.75).
+| shift/P1_burstYoung-2.0_burstOld-1.0_ndold-0.75.csv | ce1e96a4f4 | **0.21289** (rank 2) |
+Correction: earlier "young bursts same count" compared raw counts; as rates all burst age bands are 1.7-3.6x enriched.
+Package: ../BEST_P1_v5_burstsplit_ndold_0.21289 (sandbox-verified, maxdiff 3e-16).
+P1 top-120: nd&age<=90&t1h>=3 (non-burst) 34 rows (1.5x enriched, train fraud 31%), young bursts 27.
+Next: Q1 = P1 + that group -1.0; Q2 = P1 with young bursts -3.0.
