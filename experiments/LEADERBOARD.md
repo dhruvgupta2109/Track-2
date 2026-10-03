@@ -98,3 +98,11 @@ Next: G1_generator_formula.csv (a2687f3a53, user request), V1_S3_plus_travel-0.5
 | shift/V1_S3_plus_travel-0.5.csv | df00e35171 | 0.20237 |
 | shift/G1_generator_formula.csv | a2687f3a53 | 0.17795 (formula is not the generator) |
 Next: W1_E3base_S3shifts, W2_burst-1.0_ndold-0.75.
+
+## Round 3 shifts (3 Oct ~19:05)
+| shift/W2_burst-1.0_ndold-0.75.csv | 31f108aa8c | **0.20530** (best) |
+| shift/W1_E3base_S3shifts.csv | 6aa5f1f17b | 0.19923 |
+Tried and rejected as shift estimators (fail the known-public-direction check): PU learning (src/pu.py: says big_old down),
+importance-weighted v5 (src/iw.py: no burst shift). Segment emulator (src/lb_seg.py): corr 0.949 overall, LOO RMSE 0.0042 on shift family.
+Burst age split: train bursts <=90d 63.8% fraud (n47) vs test n49 (same count); >365d train 139 (8-10% fraud) vs test 290 (2x) ->
+injected bursts are old-account bursts. Next: X1 (burst old -1.25, young 0, ndold -0.75, 208c516581), S4 (burst -1, ndold -1, 7568ae0d7a).

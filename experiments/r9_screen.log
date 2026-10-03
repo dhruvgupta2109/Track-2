@@ -127,3 +127,7 @@ suraj v1 + my kNN dr                     std 0.2454 (d -0.0021)  hnW 0.2058 (d -
 v5 + their 12 flags                      std 0.2434 (d -0.0041)  hnW 0.2015 (d -0.0045)  folds+ 0.4
 v5 + their flags C=0.05                  std 0.2444 (d -0.0031)  hnW 0.2019 (d -0.0040)  folds+ 0.4
 v5 + high_amount,risky_cat_cnp,risky_cat_high_amount std 0.2470 (d -0.0005)  hnW 0.2055 (d -0.0004)  folds+ 0.3
+PU iid (unlabeled = val fold) alpha=0.0  std 0.2336 (d -0.0139)  hnW 0.1922 (d -0.0137)  folds+ 0.3
+PU iid (unlabeled = val fold) alpha=0.1  std 0.2337 (d -0.0139)  hnW 0.1941 (d -0.0118)  folds+ 0.2
+PU iid (unlabeled = val fold) alpha=0.3  std 0.2265 (d -0.0210)  hnW 0.1887 (d -0.0172)  folds+ 0.2
+PU iid (unlabeled = val fold) alpha=1.0  std 0.2150 (d -0.0326)  hnW 0.1797 (d -0.0262)  folds+ 0.0
