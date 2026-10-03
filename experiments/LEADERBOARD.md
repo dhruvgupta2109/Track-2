@@ -182,5 +182,5 @@ Final: R2op (../Track2_R2op_package, 0.23434 public, sandbox-verified, includes 
 ## Public-only route (user request): one-change probes on R2op
 - History emulator v2 (src/lb_emul2.py, src/lb_history.py: 48 hash-verified scored files; template rates + group effects + 3 components)
   FAILED time holdout (predicted C1/C7/R2op/R3op deltas vs Q30 off by 0.006-0.045; degenerate all-fit) -> rejected; probing one change at a time instead.
-| probe/B1_R2op_burst_MYIDSG-0.25_other+0.25.csv | fd8bab494f | ? | bursts split by country type (MY/ID/SG power users 2.3x enriched vs other-country 1.0x) |
+| probe/B1_R2op_burst_MYIDSG-0.25_other+0.25.csv | fd8bab494f | ? | bursts split by country type (per-row rate vs train: MY/ID/SG bursts 3.9x, other-country bursts 1.7x) |
 | probe/T3a_R2op_T3box+0.7.csv | a505e444ab | ? | planted night box T3 nudged up (never probed) |
