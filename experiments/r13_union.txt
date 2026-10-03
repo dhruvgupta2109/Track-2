@@ -1,0 +1,11 @@
+suraj v1 (their features, C=0.03)        std 0.2403 (d -0.0073)  hnW 0.1996 (d -0.0063)  folds+ 0.5
+suraj v1 + my kNN dr                     std 0.2454 (d -0.0021)  hnW 0.2058 (d -0.0001)  folds+ 0.5
+v5 + their 12 flags                      std 0.2434 (d -0.0041)  hnW 0.2015 (d -0.0045)  folds+ 0.4
+v5 + their flags C=0.05                  std 0.2444 (d -0.0031)  hnW 0.2019 (d -0.0040)  folds+ 0.4
+v5 + high_amount,risky_cat_cnp,risky_cat_high_amount std 0.2470 (d -0.0005)  hnW 0.2055 (d -0.0004)  folds+ 0.3
+rank blend v5 0.7 + suraj v1 0.3: d_std +0.0022 d_hnW +0.0034
+rank blend v5 0.5 + suraj v1 0.5: d_std +0.0012 d_hnW +0.0022
+rank blend v5 0.7 + suraj+kNN 0.3: d_std +0.0024 d_hnW +0.0034
+rank blend v5 0.5 + suraj+kNN 0.5: d_std +0.0031 d_hnW +0.0048
+rank blend v5 0.7 + v5+flags 0.3: d_std -0.0004 d_hnW -0.0006
+rank blend v5 0.5 + v5+flags 0.5: d_std -0.0008 d_hnW -0.0010
