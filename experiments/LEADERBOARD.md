@@ -144,3 +144,15 @@ Next: K6 = K3 with nd_old/high-value shifts removed at clean hours 5,6,7,21,22 (
 - Latent-class type-proportion EM (src/lca_shift.py): unidentifiable/unstable across K (test prior 6.5% / 1.1% / 1.7%) -> rejected.
 - Conclusion: unsupervised estimators cannot identify the per-group label changes; public LB is the only oracle; K3 is a local optimum
   of the group-shift family (6 consecutive single-group probes from the best file all lost 0.001-0.008).
+## Template round (3 Oct ~21:30)
+| friend M123 (K3 + old burst -0.3, hv +1.0, mid-value 1000-2000 +0.5) | - | **0.22523** |
+| friend Q30 (0.7 v5 + 0.3 pairwise-interaction LR C=0.003, M123 shifts) | - | **0.23288** (#1 public) |
+- Replicated Q30's interaction LR (src/blendlab.py): own CV 0.2472; blend w0.3 +0.0060, C=0.01 w0.4 +0.0072 vs v5. No other OOF (MLP/TabM/NCA/CatBoost/LGB/RBF/spline) adds to v5+poly.
+- The ~3040 planted test rows are three uniform synthetic boxes (src/templates.py), all established accounts, never hours 5,6,7,21,22:
+  T1 day new-device small SG (grocery/retail/transport/utilities, ~950), T2 day high-value 1500-6000 (cash/electronics/luxury/travel, AU/JP/MY/SG, spend 100-2000, ~860),
+  T3 night small SG (food/gaming/grocery/transport, ~800). Test bursts match train LEGIT bursts on every feature (fraud share 0-6% vs 24%).
+- Train rows inside the T2 box: 1 fraud / 270 (v5 OOF predicts ~7). Q30's +1.0 high-value rule puts 438 T2 rows in its top-1000.
+- Label-model fits (src/tmpl_fit*.py) cannot separate "T2 ~5% fraud" from "T2 legit + out-of-box high-value base rows under-ranked" on public differences;
+  candidate scoring over the hypothesis grid (src/tmpl_decide2.py): C1 (T2 box unshifted) mean +0.010..+0.011, worst -0.0008; C7 (T2 -1, out-of-box +0.5) mean ~+0.012, +0.038 if T2 legit, -0.0105 if 5%.
+| tmpl/C1_Q30_T2box_unshift.csv | 9422baa279 | ? |
+| tmpl/C7_Q30_T2box-1_hvout+0.5.csv | bfc1046551 | ? |
