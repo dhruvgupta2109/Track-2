@@ -127,3 +127,8 @@ day injection includes high-value fraud on established accounts. Next: U1 (P1 + 
 | shift/U2_P1_bigold+0.5_travel+0.5.csv | e843505789 | 0.21082 |
 | friend Z2 (young -2, old -0.5, ndold -0.75) | 95dccc5fd8 | **0.21922** |
 Next: Z3 = Z2 + bigold +0.5 (6234082ef2; package ../CANDIDATE_Z3_*), Z4 = Z3 with old bursts -0.25 (a6c7f33a09).
+| shift/Z3_Z2_bigold+0.5.csv | 6234082ef2 | 0.22215 |
+| shift/Z4_Z2_bigold+0.5_oldburst-0.25.csv | a6c7f33a09 | 0.22195 |
+| friend K3 (Z2 + nd<180 night low-velocity -0.5, high-value cat 2000-6000 age>365 +0.5) | d03cb4d61b | **0.223** |
+K3 top-120: nd&age<=90&t1h>=3 (non-burst) 34/38 rows, ~63-67% injected (hour fingerprint / detector); Q1 demotion -1.0 cost 0.0046
+-> injected fraud type. Next: K4 = K3 + that group +1.0 (ee12bc40b6), K5 = +0.5 (69e50b93c8).
