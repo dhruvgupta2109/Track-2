@@ -209,5 +209,9 @@ captured by v5's smooth features + interaction LR. Earlier: LCA generative (0.18
 Conclusion: no architecture beats the LR+kNN+interaction+GALR blend on train CV; R2op (0.23434) stays final.
 ## Burst-by-country coordinate steps from B1 (0.24016)
 Cells (test n / in R2op top-300): young MY/ID/SG 60/19, young other 44/38, old MY/ID/SG 270/35, old other 26/24.
-| probe/B2a_burst_MYIDSG-0.25_other+0.5.csv | a8a0634efc | ? | other-country side pushed further |
-| probe/B2b_burst_MYIDSG-0.5_other+0.25.csv | 722fc4de92 | ? | MY/ID/SG side pushed further |
+| probe/B2a_burst_MYIDSG-0.25_other+0.5.csv | a8a0634efc | **0.24094** (new best) | other-country side pushed further |
+| probe/B2b_burst_MYIDSG-0.5_other+0.25.csv | 722fc4de92 | 0.23904 | MY/ID/SG side pushed further |
+Per country (test n / B2a top-300; train fraud rate): young OTHER 44/43 (65%), old OTHER 26/26 (28%), young ID 22/9 (50%), young MY 28/6 (31%),
+old ID 80/13 (8%), old MY 100/12 (5%), SG 100/3 (0-2%).
+| probe/C1_burst_MYIDSG-0.25_otherYoung+0.75_otherOld+0.25.csv | 94c0ef2e2d | ? | age split inside other-country bursts |
+| probe/C2_burst_MYIDSG0_other+0.5.csv | 0f20603746 | ? | MY/ID/SG demotion released |
