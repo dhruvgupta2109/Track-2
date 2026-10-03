@@ -1,0 +1,64 @@
+{
+  "train_rows": 20000,
+  "test_rows": 12000,
+  "frauds": 353,
+  "train_prevalence": 0.01765,
+  "train_burst_rows": 217,
+  "test_burst_rows": 406,
+  "burst_rate_ratio": 3.118279569892473,
+  "train_mean_feature_missingness": 0.005185,
+  "test_mean_feature_missingness": 0.01810833333333333,
+  "hour_fingerprint_base_estimate": 8961.6,
+  "hour_fingerprint_excess_estimate": 3038.3999999999996,
+  "hour_fingerprint_assumption": "Base hours uniform, no feature-dependent missing-hour bias; this is an estimate, not a row label.",
+  "fresh_standard_base_ap_mean": 0.2512599746635121,
+  "fresh_missing_base_ap_mean": 0.24559348637943235,
+  "fresh_full_fit_max_difference": 2.7219893006247275e-12,
+  "gate": [
+    {
+      "variant": "loo_risk",
+      "confirmation_delta": 0.00037354423292404996,
+      "missingness_delta": 0.0005044946451736,
+      "both_seeds_positive": true,
+      "accepted": false
+    },
+    {
+      "variant": "interaction_only",
+      "confirmation_delta": 0.00049115529280135,
+      "missingness_delta": 0.0005237431600399501,
+      "both_seeds_positive": true,
+      "accepted": false
+    },
+    {
+      "variant": "capped_inputs",
+      "confirmation_delta": -0.0014115656956168,
+      "missingness_delta": -0.0013122515766313,
+      "both_seeds_positive": false,
+      "accepted": false
+    }
+  ],
+  "paired_bootstrap": {
+    "interaction_only": {
+      "delta_on_confirmation_mean_oof": 0.0008894474167243649,
+      "conditional_row_bootstrap_ci95": [
+        -0.0002327867286393642,
+        0.002647417152718434
+      ],
+      "draws": 400
+    }
+  },
+  "operating_shift": 2.188389,
+  "equivalent_pre_shift_threshold": 0.10079801714555314,
+  "flagged_before_operating_shift": 16,
+  "flagged_after_operating_shift": 300,
+  "operating_shift_preserves_test_ranking": true,
+  "new_public_score": null,
+  "unknowns": [
+    "private score",
+    "private evaluator decision threshold",
+    "test labels",
+    "true T1/T2/T3 rates",
+    "exact data generator",
+    "achievable PR-AUC ceiling"
+  ]
+}

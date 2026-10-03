@@ -1,0 +1,31 @@
+{
+  "original_public_score": 0.23434,
+  "new_public_evaluation": false,
+  "original_model_sha256": "60d9e77b6234ee01af848c2dfc95b5fb37b15d38fc845010422dc96b3f36add7",
+  "model_sha256": "60d9e77b6234ee01af848c2dfc95b5fb37b15d38fc845010422dc96b3f36add7",
+  "original_notebook_sha256": "ce1d3ceeb8d26f70d6bc5ce5932413a74f56ffdcaf6c5fa308ca13ca18115c10",
+  "notebook_sha256": "443f76d498a26c86035b229bb598d4508818e96842b8f9fea4989bac1b0ec249",
+  "runtime_sha256": "c0f4ffec345c72d821c33ae41102844fe5465ed0a5e3ef6ba27403069c75da22",
+  "train_sha256": "94687430b8c748e575273ddf1d28efe97f8bb84faabe5da777c4f7fe178502ce",
+  "test_sha256": "fb6537f4378ce61d6491a005200af4b9f15205b30978ed829d6ce7be590fccd8",
+  "max_absolute_prediction_difference": 1.1102230246251565e-16,
+  "public_test_flagged_at_half": 300,
+  "score_semantics": "Operating-point-adjusted decision scores; not calibrated probabilities.",
+  "files_sha256": {
+    "model.pkl": "60d9e77b6234ee01af848c2dfc95b5fb37b15d38fc845010422dc96b3f36add7",
+    "prediction_notebook.ipynb": "443f76d498a26c86035b229bb598d4508818e96842b8f9fea4989bac1b0ec249",
+    "predictions_before_operating_shift.csv": "855d2ba263810fcbec5d6fd70194eca83acbf933355eab9a94f6e1167aa45bc1",
+    "predictions_R2op.csv": "faacc6ae9be9a6607c5da6912a3e16078da26cce952a17e82530b5fe2d59314f",
+    "README.md": "ccb9d1ba91f0091b0f25000cfb53958e3f814033b8722ced8b6f7e7b5cbff4e9",
+    "requirements.txt": "8ae8a044ee61513066d501403ca4be574e6c861b834ac64a3f0413589c183fd8",
+    "technical_report.pdf": "a83666c8e36275489387ff62b998db86438cd79e4b2cbf1d6ec6a2bee29c070a"
+  },
+  "fresh_training_reproduction_max_difference": 2.7219893006247275e-12,
+  "isolated_notebook_cases": 8,
+  "required_uploads": [
+    "prediction_notebook.ipynb",
+    "model.pkl",
+    "requirements.txt",
+    "technical_report.pdf"
+  ]
+}

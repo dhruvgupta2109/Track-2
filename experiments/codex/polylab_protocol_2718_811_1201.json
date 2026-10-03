@@ -1,0 +1,17 @@
+{
+  "seeds": [
+    2718,
+    811,
+    1201
+  ],
+  "variants": [
+    "original",
+    "loo_risk",
+    "interaction_only",
+    "capped_inputs"
+  ],
+  "data_sha256": "94687430b8c748e575273ddf1d28efe97f8bb84faabe5da777c4f7fe178502ce",
+  "code_sha256": "3cf997ce27e62632a4603c134f46a125c383b182f6d8260f0a4b9160e4fcdf8f",
+  "selection": "Screen seed 2718; confirmation seeds 811 and 1201. No hyperparameter search. Transductive category medians use outer-training plus unlabeled validation features, matching the saved-member recipe; fraud-risk maps use outer-training labels only.",
+  "gate": "Mean confirmation base-AP delta >=0.001; both standard seed deltas positive; mean extra-missing delta >=-0.001. Prepare optional candidate only; public winner remains R2op."
+}

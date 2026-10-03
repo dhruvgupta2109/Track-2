@@ -1,0 +1,16 @@
+{
+  "seeds": [
+    811,
+    1201
+  ],
+  "variants": [
+    "original",
+    "loo_risk",
+    "interaction_only",
+    "capped_inputs"
+  ],
+  "data_sha256": "94687430b8c748e575273ddf1d28efe97f8bb84faabe5da777c4f7fe178502ce",
+  "code_sha256": "6cc97b0ba466b5c5396160b372716dd91e0025fff1c6286babddea0650195503",
+  "selection": "Screen seed 2718; confirmation seeds 811 and 1201. No hyperparameter search.",
+  "gate": "Mean confirmation base-AP delta >=0.001; both standard seed deltas positive; mean extra-missing delta >=-0.001. Prepare optional candidate only; public winner remains R2op."
+}

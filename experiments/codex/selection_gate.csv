@@ -1,0 +1,4 @@
+variant,confirmation_delta,missingness_delta,both_seeds_positive,accepted
+loo_risk,0.00037354423292404996,0.0005044946451736,True,False
+interaction_only,0.00049115529280135,0.0005237431600399501,True,False
+capped_inputs,-0.0014115656956168,-0.0013122515766313,False,False

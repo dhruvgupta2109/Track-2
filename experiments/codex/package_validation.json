@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "python": "C:\\Users\\ryash\\OneDrive\\Documents\\GitHub\\MLDA Datathon\\Track 2\\.venv_clean\\Scripts\\python.exe",
+  "in_process_checks": [
+    "unchanged model bytes",
+    "all 12,000 reference scores",
+    "singleton independence",
+    "duplicate independence",
+    "column order/extra column",
+    "category case/whitespace"
+  ],
+  "isolated_notebook_cases": [
+    {
+      "case": "template_default",
+      "rows": 12000,
+      "max_difference": 1.1102230246251565e-16,
+      "passed": true,
+      "training_file_present": false
+    },
+    {
+      "case": "shuffled_no_id",
+      "rows": 12000,
+      "max_difference": 1.1102230246251565e-16,
+      "passed": true,
+      "training_file_present": false
+    },
+    {
+      "case": "malformed_missing_column",
+      "rows": 6,
+      "max_difference": 8.326672684688674e-17,
+      "passed": true,
+      "training_file_present": false
+    },
+    {
+      "case": "singleton",
+      "rows": 1,
+      "max_difference": 4.163336342344337e-17,
+      "passed": true,
+      "training_file_present": false
+    },
+    {
+      "case": "all_missing",
+      "rows": 3,
+      "max_difference": 6.938893903907228e-18,
+      "passed": true,
+      "training_file_present": false
+    },
+    {
+      "case": "empty_header",
+      "rows": 0,
+      "max_difference": 0.0,
+      "passed": true,
+      "training_file_present": false
+    },
+    {
+      "case": "empty_with_id",
+      "rows": 0,
+      "max_difference": 0.0,
+      "passed": true,
+      "training_file_present": false
+    },
+    {
+      "case": "empty_zero_bytes",
+      "rows": 0,
+      "max_difference": 0.0,
+      "passed": true,
+      "training_file_present": false
+    }
+  ],
+  "seconds": 10.547000000020489,
+  "model_sha256": "60d9e77b6234ee01af848c2dfc95b5fb37b15d38fc845010422dc96b3f36add7",
+  "notebook_sha256": "443f76d498a26c86035b229bb598d4508818e96842b8f9fea4989bac1b0ec249"
+}
