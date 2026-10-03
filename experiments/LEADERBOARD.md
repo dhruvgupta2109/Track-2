@@ -220,4 +220,8 @@ old ID 80/13 (8%), old MY 100/12 (5%), SG 100/3 (0-2%).
   history agrees with it (P1: all old bursts -0.5 more -> -0.0063). EV of old-other +1.0 ~ +0.002 at P(C1 reading)=0.7.
 - Package ../Track2_C2_package (R2op notebook + burst-by-country shifts before the operating point): reproduces scored C2 (max diff 1.1e-16,
   identical ranking), sandbox all 3 modes pass.
-| probe/D1_burst_MYIDSG0_otherYoung+0.5_otherOld+1.0.csv | e2fa4fb2f3 | ? | only the 26 old other-country bursts move (+0.5 -> +1.0) |
+| probe/D1_burst_MYIDSG0_otherYoung+0.5_otherOld+1.0.csv | e2fa4fb2f3 | 0.23604 (-0.0057: C1 reading wrong) | only the 26 old other-country bursts move (+0.5 -> +1.0) |
+- Refit local emulator with D1: cannot fit (C2 pred +0.0042 vs obs +0.0074; LOO RMSE 0.005-0.006) -> public outcomes driven by a few
+  realised labels; emulator no longer used. C2 is the best point on every tested burst coordinate.
+- New-device x country: dilution is SG-only (T1 box); non-SG nd_old rows 1.0x train rate but only 5 in C2 top-300 -> low leverage, not probed.
+- FINAL: C2 0.24174 (../Track2_C2_package, friend folder ../BEST_C2_0.24174 + zip; sandbox-verified).
