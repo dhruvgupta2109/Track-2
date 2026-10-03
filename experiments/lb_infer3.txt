@@ -1,0 +1,22 @@
+device cuda
+lam 1e-06: RMSE 0.0032 corr 0.821 prev 0.0309
+weights (on standardised logits): {"v5": 0.752, "sur": -0.001, "k01": -0.0, "mlp": -0.0, "cb": -0.0}
+   sub_v3_lr.csv                                 public 0.17206 fit 0.17859
+   sub_v4_lr.csv                                 public 0.17966 fit 0.18265
+   sub_v4_lambda05_probe.csv                     public 0.16822 fit 0.17605
+   sub_v5_lr_knn.csv                             public 0.18626 fit 0.18483
+   sub_v5a_lr.csv                                public 0.18026 fit 0.18342
+   cand_v4_knn_full.csv                          public 0.18436 fit 0.18200
+   c1_v5_knn_catmetric.csv                       public 0.18388 fit 0.18377
+   d1_v5_plus_1h_velocity.csv                    public 0.18463 fit 0.18464
+   cand_lgb_mono.csv                             public 0.16962 fit 0.16836
+   v6_E1_knn_metric.csv                          public 0.18237 fit 0.18468
+   v6_rank90_skmlp10.csv                         public 0.18453 fit 0.18425
+   E1_0.45k01_0.4surknn_0.15mlp.csv              public 0.18053 fit 0.18230
+   E2_0.4k01_0.15v5_0.3sur_0.15mlp.csv           public 0.18398 fit 0.18276
+   E3_0.7k01_0.3sur.csv                          public 0.18662 fit 0.18299
+   submission.csv                                public 0.17617 fit 0.17450
+   submission.csv                                public 0.17136 fit 0.16981
+   cand1_v1_plus_paysim_score.csv                public 0.17830 fit 0.17425
+   cand2_v1_iterative_imputation.csv             public 0.17809 fit 0.17452
+   cand3_blend_0.8v1_0.2lgbm.csv                 public 0.17835 fit 0.17548

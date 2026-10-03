@@ -65,3 +65,15 @@ the sklearn-MLP rank blend added +0.0022 public on top of its base (local +0.001
 - Augmentation: SMOTE/jitter/copula/ordinary-fraud/hard-legit at extra weight: -0.0025..-0.19 (prior shift);
   mass-preserving: +-0.0003 (no information gain); pseudo-labelled legit: +-0.0003.
 - New CSVs: submissions/audit/v5_rank85_skmlp15.csv (sha 005ff1c9b1), submissions/audit/v5_rank80_deep4_20.csv (sha 8b58245af9)
+
+## Round 13 public + leaderboard-emulator (3 Oct ~17:51)
+| file | sha256[:10] | public |
+|---|---|---|
+| submissions/final_try/E3_0.7k01_0.3sur.csv | a3fbcb9c1b | **0.18662** (best) |
+| submissions/final_try/E2_0.4k01_0.15v5_0.3sur_0.15mlp.csv | 80d0c345d3 | 0.18398 |
+| submissions/final_try/E1_0.45k01_0.4surknn_0.15mlp.csv | 183aa749e8 | 0.18053 |
+Teammate public (their log): v1 0.17617 (04aeb8a713), v2 0.17136, cand1 0.17830, cand2 0.17809, cand3 0.17835.
+Local CV ordering E1>E2>E3 was reversed on public.
+Emulator (src/lb_soft.py): differentiable expected-AP label model fitted to 19 public scores; LOO corr 0.835, RMSE 0.0031;
+fitted mix v5 .38 / mlp .35 / sur .20 / k01 .10 / cb -.09 / v4 -.03, implied test prevalence ~1.5%. Cannot resolve <0.004 differences.
+New: LBmix_emulator_optimum.csv (ffcc529417, emulator +0.003 vs v5), TOP5_public_rank_average.csv (79e27a5cf7).
