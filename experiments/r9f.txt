@@ -1,0 +1,6 @@
+fresh seed 99: E1-v5 d_std +0.0018 d_hnW +0.0026
+fresh seed 314: E1-v5 d_std +0.0019 d_hnW +0.0025
+fresh seed 7: E1-v5 d_std +0.0003 d_hnW -0.0001
+fresh seed 4242: E1-v5 d_std +0.0021 d_hnW +0.0021
+v6_E1                        std=0.2500 std_median_fold=0.2523 std_sd_fold=0.0362 std_min_fold=0.1806 std_max_fold=0.3489 covW=0.3830 hnW=0.2084 roc=0.7752 hn_recall@top2%=0.2742 seed2=0.2455 miss=0.2446 hnW_miss=0.2036 holdout=0.4201 holdout_hnW=0.2834 d_std_ci90=-0.0011..+0.0024 d_hnW_ci90=-0.0012..+0.0038 P(d_hnW>0)=0.7400
+prev deltas vs v5: {0.005: 0.0022, 0.0075: 0.0019, 0.01: 0.0013, 0.0125: 0.0012, 0.015: 0.0011, 0.0177: 0.001}

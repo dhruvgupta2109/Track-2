@@ -1,0 +1,16 @@
+v5 reproduction (kf1 kl1)                std 0.2475 (d +0.0000)  hnW 0.2059 (d +0.0000)  folds+ 0.0
+asym kf1, kl3 mean                       std 0.2470 (d -0.0005)  hnW 0.2057 (d -0.0002)  folds+ 0.2
+asym kf1, kl5 mean                       std 0.2469 (d -0.0006)  hnW 0.2060 (d +0.0001)  folds+ 0.4
+asym kf1, kl10 mean                      std 0.2462 (d -0.0013)  hnW 0.2058 (d -0.0002)  folds+ 0.3
+asym kf1, kl20 mean                      std 0.2458 (d -0.0018)  hnW 0.2048 (d -0.0011)  folds+ 0.3
+asym kf1, kl5 kth                        std 0.2461 (d -0.0014)  hnW 0.2056 (d -0.0003)  folds+ 0.3
+multi: dr + dl1 + dl10mean + df1         std 0.2452 (d -0.0023)  hnW 0.2016 (d -0.0043)  folds+ 0.6
+legit isolation only (dl1)               std 0.2457 (d -0.0019)  hnW 0.2029 (d -0.0030)  folds+ 0.3
+conditional pool transaction_channel (replace) std 0.2448 (d -0.0028)  hnW 0.2049 (d -0.0010)  folds+ 0.2
+global + conditional transaction_channel std 0.2459 (d -0.0016)  hnW 0.2047 (d -0.0012)  folds+ 0.3
+conditional pool new_device (replace)    std 0.2475 (d -0.0000)  hnW 0.2059 (d +0.0000)  folds+ 0.6
+global + conditional new_device          std 0.2476 (d +0.0000)  hnW 0.2058 (d -0.0001)  folds+ 0.6
+conditional pool foreign (replace)       std 0.2479 (d +0.0004)  hnW 0.2062 (d +0.0002)  folds+ 0.7
+global + conditional foreign             std 0.2476 (d +0.0001)  hnW 0.2061 (d +0.0002)  folds+ 0.8
+conditional pool merchant_category (replace) std 0.2486 (d +0.0011)  hnW 0.2101 (d +0.0041)  folds+ 0.3
+global + conditional merchant_category   std 0.2455 (d -0.0020)  hnW 0.2029 (d -0.0030)  folds+ 0.2

@@ -1,0 +1,7 @@
+E1 baseline                              std 0.2490 (d +0.0015)  hnW 0.2082 (d +0.0023)  folds+ 0.6
+E1 + NCA dim6 (both)                     std 0.2471 (d -0.0005)  hnW 0.2076 (d +0.0017)  folds+ 0.5
+NCA dim6 only                            std 0.2456 (d -0.0019)  hnW 0.2064 (d +0.0005)  folds+ 0.3
+E1 + NCA dim3                            std 0.2453 (d -0.0022)  hnW 0.2059 (d -0.0000)  folds+ 0.6
+E1 + prototypes/RBF                      std 0.2190 (d -0.0285)  hnW 0.1768 (d -0.0291)  folds+ 0.0
+E1 + Nystroem200 g0.1 C0.1               std 0.2277 (d -0.0199)  hnW 0.1945 (d -0.0114)  folds+ 0.1
+E1 + Nystroem200 g0.1 C0.03              std 0.2348 (d -0.0127)  hnW 0.1971 (d -0.0088)  folds+ 0.2

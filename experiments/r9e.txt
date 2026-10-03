@@ -1,0 +1,6 @@
+E1 + subtype kNN (5)                     std 0.2439 (d -0.0036)  hnW 0.2020 (d -0.0039)  folds+ 0.5
+E1 + subtype kNN nd,burst                std 0.2477 (d +0.0002)  hnW 0.2056 (d -0.0003)  folds+ 0.6
+E1 + subtype kNN young,big               std 0.2473 (d -0.0003)  hnW 0.2068 (d +0.0009)  folds+ 0.6
+multimetric full+amt_age+vel_time_dev    std 0.2474 (d -0.0001)  hnW 0.2076 (d +0.0017)  folds+ 0.5
+multimetric full+vel_time_dev            std 0.2483 (d +0.0008)  hnW 0.2077 (d +0.0018)  folds+ 0.5
+multimetric full+amt_age                 std 0.2486 (d +0.0010)  hnW 0.2085 (d +0.0026)  folds+ 0.7

@@ -1,0 +1,11 @@
+device cuda
+MLP 5-seed (standalone)                  std 0.2340 (d -0.0135)  hnW 0.1920 (d -0.0139)
+LR + E1 dr + supcon dr                   std 0.2486 (d +0.0010)  hnW 0.2082 (d +0.0023)
+blend rank 0.95 v5 + 0.05 MLP            std 0.2481 (d +0.0005)  hnW 0.2071 (d +0.0012)
+blend prob 0.95 v5 + 0.05 MLP            std 0.2477 (d +0.0002)  hnW 0.2063 (d +0.0004)
+blend rank 0.90 v5 + 0.1 MLP             std 0.2484 (d +0.0009)  hnW 0.2077 (d +0.0018)
+blend prob 0.90 v5 + 0.1 MLP             std 0.2481 (d +0.0006)  hnW 0.2069 (d +0.0010)
+blend rank 0.80 v5 + 0.2 MLP             std 0.2480 (d +0.0005)  hnW 0.2074 (d +0.0015)
+blend prob 0.80 v5 + 0.2 MLP             std 0.2483 (d +0.0008)  hnW 0.2075 (d +0.0016)
+blend rank 0.70 v5 + 0.3 MLP             std 0.2476 (d +0.0001)  hnW 0.2073 (d +0.0014)
+blend prob 0.70 v5 + 0.3 MLP             std 0.2480 (d +0.0005)  hnW 0.2072 (d +0.0013)

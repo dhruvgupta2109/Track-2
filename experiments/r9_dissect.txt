@@ -1,0 +1,46 @@
+nearest-fraud distance quantiles: fraud rows [0.932 1.156 1.429 2.011] legit rows [0.781 1.009 1.265 1.605]
+nearest-legit distance quantiles: fraud rows [0.328 0.49  0.73  1.39 ] legit rows [0.23  0.33  0.462 0.632]
+fraud rate by d_f decile: [0.0115, 0.009, 0.0155, 0.0115, 0.0185, 0.0145, 0.019, 0.0135, 0.026, 0.0375]
+fraud rate by ratio decile: [0.061, 0.0115, 0.0185, 0.0135, 0.011, 0.0165, 0.011, 0.0135, 0.009, 0.011]
+d_f<0.05: n=0 fraud rate nan
+d_f<0.1: n=1 fraud rate 0.000
+d_f<0.2: n=8 fraud rate 0.000
+d_f<0.3: n=46 fraud rate 0.000
+
+share of squared nearest-FRAUD distance by dimension (mean over group):
+  fraud promoted  n=   11  same channel 0.27 cat 0.55 country 0.18 hour 0.09  median d_f 0.959 d_l 2.200
+  fraud demoted   n=    6  same channel 0.33 cat 0.50 country 0.33 hour 0.00  median d_f 3.122 d_l 0.668
+  legit demoted   n=  310  same channel 0.24 cat 0.18 country 0.55 hour 0.09  median d_f 2.523 d_l 0.415
+  legit promoted  n=  310  same channel 0.23 cat 0.44 country 0.73 hour 0.07  median d_f 0.593 d_l 0.507
+                       fraud promoted  fraud demoted  legit demoted  legit promoted
+log_amt                         0.065          0.046          0.111           0.114
+amt_rel_cat                     0.188          0.205          0.152           0.178
+log_age                         0.226          0.079          0.154           0.198
+new_device                      0.000          0.000          0.011           0.000
+transactions_last_24h           0.236          0.115          0.087           0.204
+transactions_last_1h            0.041          0.141          0.089           0.021
+night                           0.000          0.074          0.069           0.000
+foreign                         0.000          0.058          0.085           0.000
+avg_spend                       0.163          0.088          0.096           0.142
+amt_rel_avg                     0.080          0.194          0.145           0.143
+
+baseline same-X rates for all rows: channel 0.28 cat 0.22 country 0.71
+
+fraud rate by (same channel as nearest fraud, ratio tercile):
+                   size    mean
+same_chan_f ratio              
+False       0      4827  0.0236
+            1      4836  0.0132
+            2      4773  0.0128
+True        0      1840  0.0424
+            1      1830  0.0115
+            2      1894  0.0079
+fraud rate by (same merchant as nearest fraud, ratio tercile):
+                  size    mean
+same_cat_f ratio              
+False      0      4944  0.0261
+           1      5216  0.0119
+           2      5422  0.0113
+True       0      1723  0.0366
+           1      1450  0.0159
+           2      1245  0.0120

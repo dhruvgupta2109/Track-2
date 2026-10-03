@@ -1,0 +1,65 @@
+v5 reproduction (kf1 kl1)                std 0.2475 (d +0.0000)  hnW 0.2059 (d +0.0000)  folds+ 0.0
+asym kf1, kl3 mean                       std 0.2470 (d -0.0005)  hnW 0.2057 (d -0.0002)  folds+ 0.2
+asym kf1, kl5 mean                       std 0.2469 (d -0.0006)  hnW 0.2060 (d +0.0001)  folds+ 0.4
+asym kf1, kl10 mean                      std 0.2462 (d -0.0013)  hnW 0.2058 (d -0.0002)  folds+ 0.3
+asym kf1, kl20 mean                      std 0.2458 (d -0.0018)  hnW 0.2048 (d -0.0011)  folds+ 0.3
+asym kf1, kl5 kth                        std 0.2461 (d -0.0014)  hnW 0.2056 (d -0.0003)  folds+ 0.3
+multi: dr + dl1 + dl10mean + df1         std 0.2452 (d -0.0023)  hnW 0.2016 (d -0.0043)  folds+ 0.6
+legit isolation only (dl1)               std 0.2457 (d -0.0019)  hnW 0.2029 (d -0.0030)  folds+ 0.3
+conditional pool transaction_channel (replace) std 0.2448 (d -0.0028)  hnW 0.2049 (d -0.0010)  folds+ 0.2
+global + conditional transaction_channel std 0.2459 (d -0.0016)  hnW 0.2047 (d -0.0012)  folds+ 0.3
+conditional pool new_device (replace)    std 0.2475 (d -0.0000)  hnW 0.2059 (d +0.0000)  folds+ 0.6
+global + conditional new_device          std 0.2476 (d +0.0000)  hnW 0.2058 (d -0.0001)  folds+ 0.6
+conditional pool foreign (replace)       std 0.2479 (d +0.0004)  hnW 0.2062 (d +0.0002)  folds+ 0.7
+global + conditional foreign             std 0.2476 (d +0.0001)  hnW 0.2061 (d +0.0002)  folds+ 0.8
+conditional pool merchant_category (replace) std 0.2486 (d +0.0011)  hnW 0.2101 (d +0.0041)  folds+ 0.3
+global + conditional merchant_category   std 0.2455 (d -0.0020)  hnW 0.2029 (d -0.0030)  folds+ 0.2
+drop log_amt                             std 0.2468 (d -0.0007)  hnW 0.2056 (d -0.0003)  folds+ 0.2
+drop amt_rel_cat                         std 0.2461 (d -0.0014)  hnW 0.2057 (d -0.0002)  folds+ 0.4
+drop log_age                             std 0.2449 (d -0.0026)  hnW 0.2045 (d -0.0014)  folds+ 0.1
+drop new_device                          std 0.2449 (d -0.0026)  hnW 0.2034 (d -0.0025)  folds+ 0.1
+drop transactions_last_24h               std 0.2441 (d -0.0035)  hnW 0.2019 (d -0.0040)  folds+ 0.2
+drop transactions_last_1h                std 0.2453 (d -0.0022)  hnW 0.2049 (d -0.0010)  folds+ 0.4
+drop night                               std 0.2458 (d -0.0017)  hnW 0.2050 (d -0.0009)  folds+ 0.0
+drop foreign                             std 0.2464 (d -0.0012)  hnW 0.2056 (d -0.0003)  folds+ 0.2
+drop avg_spend                           std 0.2475 (d -0.0000)  hnW 0.2059 (d -0.0000)  folds+ 0.4
+drop amt_rel_avg                         std 0.2482 (d +0.0006)  hnW 0.2071 (d +0.0012)  folds+ 0.6
+add hour_cos+hour_sin                    std 0.2465 (d -0.0010)  hnW 0.2050 (d -0.0009)  folds+ 0.7
+add log_spend                            std 0.2469 (d -0.0006)  hnW 0.2055 (d -0.0004)  folds+ 0.2
+add young                                std 0.2466 (d -0.0010)  hnW 0.2046 (d -0.0013)  folds+ 0.4
+add burst                                std 0.2489 (d +0.0014)  hnW 0.2081 (d +0.0022)  folds+ 0.7
+add t1_ge4_nb                            std 0.2466 (d -0.0009)  hnW 0.2055 (d -0.0005)  folds+ 0.2
+add bank+ecom                            std 0.2450 (d -0.0025)  hnW 0.2042 (d -0.0017)  folds+ 0.3
+add cash                                 std 0.2478 (d +0.0002)  hnW 0.2084 (d +0.0025)  folds+ 0.5
+add n_miss                               std 0.2453 (d -0.0022)  hnW 0.2037 (d -0.0022)  folds+ 0.1
+add nd_x_logage                          std 0.2461 (d -0.0015)  hnW 0.2048 (d -0.0011)  folds+ 0.3
+add age_lt120                            std 0.2468 (d -0.0007)  hnW 0.2053 (d -0.0006)  folds+ 0.4
+add amt_pct_cat                          std 0.2467 (d -0.0008)  hnW 0.2051 (d -0.0008)  folds+ 0.3
+add amt_rel_transaction_channel          std 0.2472 (d -0.0003)  hnW 0.2055 (d -0.0004)  folds+ 0.3
+E1 = -amt_rel_avg +burst                 std 0.2490 (d +0.0015)  hnW 0.2082 (d +0.0023)  folds+ 0.6
+E2 = E1 + cash                           std 0.2487 (d +0.0012)  hnW 0.2098 (d +0.0039)  folds+ 0.4
+E1 + merchant pool                       std 0.2484 (d +0.0009)  hnW 0.2095 (d +0.0036)  folds+ 0.4
+E2 + merchant pool                       std 0.2474 (d -0.0001)  hnW 0.2085 (d +0.0026)  folds+ 0.4
+CS final weights                         std 0.2493 (d +0.0018)  hnW 0.2091 (d +0.0032)  folds+ 0.5
+E1 baseline                              std 0.2490 (d +0.0015)  hnW 0.2082 (d +0.0023)  folds+ 0.6
+E1 + NCA dim6 (both)                     std 0.2471 (d -0.0005)  hnW 0.2076 (d +0.0017)  folds+ 0.5
+NCA dim6 only                            std 0.2456 (d -0.0019)  hnW 0.2064 (d +0.0005)  folds+ 0.3
+E1 + NCA dim3                            std 0.2453 (d -0.0022)  hnW 0.2059 (d -0.0000)  folds+ 0.6
+E1 + prototypes/RBF                      std 0.2190 (d -0.0285)  hnW 0.1768 (d -0.0291)  folds+ 0.0
+E1 + Nystroem200 g0.1 C0.1               std 0.2277 (d -0.0199)  hnW 0.1945 (d -0.0114)  folds+ 0.1
+E1 + Nystroem200 g0.1 C0.03              std 0.2348 (d -0.0127)  hnW 0.1971 (d -0.0088)  folds+ 0.2
+E1 + subtype kNN (5)                     std 0.2439 (d -0.0036)  hnW 0.2020 (d -0.0039)  folds+ 0.5
+E1 + subtype kNN nd,burst                std 0.2477 (d +0.0002)  hnW 0.2056 (d -0.0003)  folds+ 0.6
+E1 + subtype kNN young,big               std 0.2473 (d -0.0003)  hnW 0.2068 (d +0.0009)  folds+ 0.6
+multimetric full+amt_age+vel_time_dev    std 0.2474 (d -0.0001)  hnW 0.2076 (d +0.0017)  folds+ 0.5
+multimetric full+vel_time_dev            std 0.2483 (d +0.0008)  hnW 0.2077 (d +0.0018)  folds+ 0.5
+multimetric full+amt_age                 std 0.2486 (d +0.0010)  hnW 0.2085 (d +0.0026)  folds+ 0.7
+E1 linear                                std 0.2490 (d +0.0015)  hnW 0.2082 (d +0.0023)  folds+ 0.6
+E1 + hinge q0.10                         std 0.2457 (d -0.0019)  hnW 0.2015 (d -0.0044)  folds+ 0.5
+E1 + hinge q0.05,0.15                    std 0.2441 (d -0.0034)  hnW 0.1994 (d -0.0065)  folds+ 0.6
+E1 + hinge q0.20                         std 0.2468 (d -0.0007)  hnW 0.2037 (d -0.0022)  folds+ 0.7
+E1 hinge q0.10 only (no linear)          std 0.2456 (d -0.0020)  hnW 0.2012 (d -0.0047)  folds+ 0.5
+E1 + square                              std 0.2477 (d +0.0002)  hnW 0.2044 (d -0.0015)  folds+ 0.7
+E1 + dr x new_device                     std 0.2454 (d -0.0021)  hnW 0.2017 (d -0.0042)  folds+ 0.6
+E1 + dr x burst                          std 0.2484 (d +0.0009)  hnW 0.2051 (d -0.0008)  folds+ 0.4
+E1 + dr x night                          std 0.2461 (d -0.0014)  hnW 0.2032 (d -0.0027)  folds+ 0.4

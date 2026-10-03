@@ -1,0 +1,49 @@
+E1 = -amt_rel_avg +burst                 std 0.2490 (d +0.0015)  hnW 0.2082 (d +0.0023)  folds+ 0.6
+E2 = E1 + cash                           std 0.2487 (d +0.0012)  hnW 0.2098 (d +0.0039)  folds+ 0.4
+E1 + merchant pool                       std 0.2484 (d +0.0009)  hnW 0.2095 (d +0.0036)  folds+ 0.4
+E2 + merchant pool                       std 0.2474 (d -0.0001)  hnW 0.2085 (d +0.0026)  folds+ 0.4
+CS start E1                              std 0.2490 (d +0.0015)  hnW 0.2082 (d +0.0023)  folds+ 0.6
+CS p0 log_amt x0.5                       std 0.2491 (d +0.0016)  hnW 0.2086 (d +0.0027)  folds+ 0.5
+CS p0 log_amt x2.0                       std 0.2490 (d +0.0015)  hnW 0.2081 (d +0.0021)  folds+ 0.5
+CS p0 amt_rel_cat x0.5                   std 0.2487 (d +0.0012)  hnW 0.2076 (d +0.0017)  folds+ 0.6
+CS p0 amt_rel_cat x2.0                   std 0.2479 (d +0.0003)  hnW 0.2073 (d +0.0014)  folds+ 0.5
+CS p0 log_age x0.5                       std 0.2486 (d +0.0010)  hnW 0.2075 (d +0.0016)  folds+ 0.5
+CS p0 log_age x2.0                       std 0.2489 (d +0.0014)  hnW 0.2082 (d +0.0023)  folds+ 0.5
+CS p0 new_device x0.5                    std 0.2484 (d +0.0009)  hnW 0.2075 (d +0.0016)  folds+ 0.7
+CS p0 new_device x2.0                    std 0.2488 (d +0.0013)  hnW 0.2079 (d +0.0020)  folds+ 0.6
+CS p0 transactions_last_24h x0.5         std 0.2490 (d +0.0015)  hnW 0.2089 (d +0.0030)  folds+ 0.5
+   accepted -> {'log_amt': np.float64(1.0), 'amt_rel_cat': np.float64(1.0), 'log_age': np.float64(1.0), 'new_device': np.float64(1.0), 'transactions_last_24h': np.float64(0.5), 'transactions_last_1h': np.float64(1.0), 'night': np.float64(1.0), 'foreign': np.float64(1.0), 'avg_spend': np.float64(1.0), 'burst': np.float64(1.0)}
+CS p0 transactions_last_24h x2.0         std 0.2490 (d +0.0015)  hnW 0.2082 (d +0.0023)  folds+ 0.6
+CS p0 transactions_last_1h x0.5          std 0.2488 (d +0.0013)  hnW 0.2083 (d +0.0024)  folds+ 0.4
+CS p0 transactions_last_1h x2.0          std 0.2491 (d +0.0015)  hnW 0.2087 (d +0.0028)  folds+ 0.6
+CS p0 night x0.5                         std 0.2486 (d +0.0011)  hnW 0.2085 (d +0.0025)  folds+ 0.5
+CS p0 night x2.0                         std 0.2489 (d +0.0014)  hnW 0.2087 (d +0.0028)  folds+ 0.5
+CS p0 foreign x0.5                       std 0.2488 (d +0.0013)  hnW 0.2088 (d +0.0029)  folds+ 0.5
+CS p0 foreign x2.0                       std 0.2491 (d +0.0015)  hnW 0.2088 (d +0.0029)  folds+ 0.6
+CS p0 avg_spend x0.5                     std 0.2493 (d +0.0018)  hnW 0.2086 (d +0.0027)  folds+ 0.5
+CS p0 avg_spend x2.0                     std 0.2483 (d +0.0008)  hnW 0.2084 (d +0.0025)  folds+ 0.6
+CS p0 burst x0.5                         std 0.2490 (d +0.0015)  hnW 0.2089 (d +0.0030)  folds+ 0.5
+CS p0 burst x2.0                         std 0.2490 (d +0.0015)  hnW 0.2089 (d +0.0030)  folds+ 0.5
+CS p1 log_amt x0.5                       std 0.2488 (d +0.0013)  hnW 0.2087 (d +0.0028)  folds+ 0.6
+CS p1 log_amt x2.0                       std 0.2488 (d +0.0013)  hnW 0.2082 (d +0.0023)  folds+ 0.5
+CS p1 amt_rel_cat x0.5                   std 0.2490 (d +0.0015)  hnW 0.2085 (d +0.0026)  folds+ 0.4
+CS p1 amt_rel_cat x2.0                   std 0.2484 (d +0.0009)  hnW 0.2082 (d +0.0023)  folds+ 0.5
+CS p1 log_age x0.5                       std 0.2482 (d +0.0007)  hnW 0.2078 (d +0.0019)  folds+ 0.5
+CS p1 log_age x2.0                       std 0.2493 (d +0.0018)  hnW 0.2091 (d +0.0032)  folds+ 0.5
+   accepted -> {'log_amt': np.float64(1.0), 'amt_rel_cat': np.float64(1.0), 'log_age': np.float64(2.0), 'new_device': np.float64(1.0), 'transactions_last_24h': np.float64(0.5), 'transactions_last_1h': np.float64(1.0), 'night': np.float64(1.0), 'foreign': np.float64(1.0), 'avg_spend': np.float64(1.0), 'burst': np.float64(1.0)}
+CS p1 new_device x0.5                    std 0.2491 (d +0.0016)  hnW 0.2092 (d +0.0033)  folds+ 0.5
+CS p1 new_device x2.0                    std 0.2494 (d +0.0019)  hnW 0.2093 (d +0.0034)  folds+ 0.3
+CS p1 transactions_last_24h x0.5         std 0.2494 (d +0.0019)  hnW 0.2094 (d +0.0035)  folds+ 0.4
+CS p1 transactions_last_24h x2.0         std 0.2489 (d +0.0014)  hnW 0.2082 (d +0.0023)  folds+ 0.5
+CS p1 transactions_last_1h x0.5          std 0.2490 (d +0.0015)  hnW 0.2086 (d +0.0027)  folds+ 0.6
+CS p1 transactions_last_1h x2.0          std 0.2491 (d +0.0016)  hnW 0.2085 (d +0.0026)  folds+ 0.5
+CS p1 night x0.5                         std 0.2490 (d +0.0015)  hnW 0.2088 (d +0.0029)  folds+ 0.5
+CS p1 night x2.0                         std 0.2490 (d +0.0014)  hnW 0.2086 (d +0.0027)  folds+ 0.4
+CS p1 foreign x0.5                       std 0.2491 (d +0.0016)  hnW 0.2089 (d +0.0030)  folds+ 0.6
+CS p1 foreign x2.0                       std 0.2492 (d +0.0017)  hnW 0.2088 (d +0.0029)  folds+ 0.4
+CS p1 avg_spend x0.5                     std 0.2495 (d +0.0020)  hnW 0.2090 (d +0.0031)  folds+ 0.5
+CS p1 avg_spend x2.0                     std 0.2485 (d +0.0010)  hnW 0.2085 (d +0.0026)  folds+ 0.5
+CS p1 burst x0.5                         std 0.2493 (d +0.0018)  hnW 0.2091 (d +0.0032)  folds+ 0.5
+CS p1 burst x2.0                         std 0.2493 (d +0.0018)  hnW 0.2091 (d +0.0032)  folds+ 0.5
+final weights {'log_amt': np.float64(1.0), 'amt_rel_cat': np.float64(1.0), 'log_age': np.float64(2.0), 'new_device': np.float64(1.0), 'transactions_last_24h': np.float64(0.5), 'transactions_last_1h': np.float64(1.0), 'night': np.float64(1.0), 'foreign': np.float64(1.0), 'avg_spend': np.float64(1.0), 'burst': np.float64(1.0)}
+CS final weights                         std 0.2493 (d +0.0018)  hnW 0.2091 (d +0.0032)  folds+ 0.5

@@ -1,0 +1,6 @@
+sklearn MLP standalone [0.2284 0.186 ]
+v6 rank + 0.1 skMLP: d_std +0.0011 d_hnW +0.0015
+v6 rank + 0.2 skMLP: d_std +0.0005 d_hnW +0.0017
+v6_rank80_torchmlp20 spearman v5 0.9922 v6 0.9953
+v6_rank80_skmlp20 spearman v5 0.9907 v6 0.9933
+torch MLP vs v5 spearman 0.8795 sk vs torch 0.9484

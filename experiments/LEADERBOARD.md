@@ -38,3 +38,13 @@ subtype detectors, all stacking except kNN, external augmentation, amount steps,
 | submissions/sub_v5b_burstnight_probe.csv | 869c1d1923 | unknown / not reported |
 Public/std-CV delta ratio (vs v3): v4 0.70, v5 0.76; hnW overstates ~2x; v1 vs v3 public +0.0041 vs expected -0.003 (~1.2 paired sd, noise).
 Paired public noise for rank-corr ~0.98 models: sd ~0.002 (12k rows) - 0.006 (6k rows).
+
+## Round 8 public batch (2026-10-03)
+| file | md5 | public | local std (vs v5 0.2490) | note |
+|---|---|---|---|---|
+| submissions/sub_v5a_lr.csv | 2449d07f40 | 0.18026 | 0.2440 | kNN worth +0.0060 public (local +0.0050) |
+| submissions/audit/cand_v4_knn_full.csv | 07c5add202 | 0.18436 | 0.2469 | v4+kNN: +0.0047 public over v4 |
+| submissions/audit/c1_v5_knn_catmetric.csv | e7486891b3 | 0.18388 | 0.2491 | categorical metric -0.0024 vs v5 |
+| submissions/audit/d1_v5_plus_1h_velocity.csv | e54b8af53f | 0.18463 | 0.2477 | -0.0016 vs v5 (1h hypothesis not supported) |
+| submissions/audit/cand_lgb_mono.csv | e24832a48c | 0.16962 | 0.2122 | std CV right, test-like holdout view wrong |
+Current leader ~0.19010.
