@@ -115,3 +115,11 @@ Correction: earlier "young bursts same count" compared raw counts; as rates all 
 Package: ../BEST_P1_v5_burstsplit_ndold_0.21289 (sandbox-verified, maxdiff 3e-16).
 P1 top-120: nd&age<=90&t1h>=3 (non-burst) 34 rows (1.5x enriched, train fraud 31%), young bursts 27.
 Next: Q1 = P1 + that group -1.0; Q2 = P1 with young bursts -3.0.
+| shift/Q1_P1_plus_fastYoungND-1.0.csv | b01f60b353 | 0.20826 |
+| shift/Q2_P1_burstYoung-3.0.csv | 91a8ac0a7d | 0.20928 |
+## Hour fingerprint (src/inject.py, inject2.py, inject_detector.py)
+Test = ~8960 train-like base rows (uniform hours) + ~3040 injected rows that never use hours 5,6,7,21,22 (adv AUC train vs test in those
+hours 0.574 vs 0.684 elsewhere). Bursts are NOT injected (base itself has ~4x bursts). Day-band (8-20) injection: nd_old 778,
+amt>2000 643, big&age>1500 886, luxury/travel/cash/electronics, foreign. Night-band (23-4): ordinary low-value SG established accounts (802).
+Detector P(inj|x) (cross-fitted band-vs-clean) says high-scoring big&old rows are most injected; public says demoting them hurts ->
+day injection includes high-value fraud on established accounts. Next: U1 (P1 + bigold +0.5), U2 (+ travel +0.5).
