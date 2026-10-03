@@ -179,3 +179,8 @@ Packages: ../Track2_R1op_package and ../Track2_Q30op_package (both sandbox-verif
 | tmpl/R3op_package_output.csv (= ../Track2_R3op_package/predictions_R3op.csv) | 7cdfaac8ee | ? |
 | tmpl/R3op_package_output.csv | 7cdfaac8ee | 0.23260 (ehh: -0.0017 vs R2op; degree-3 member did not transfer) |
 Final: R2op (../Track2_R2op_package, 0.23434 public, sandbox-verified, includes operating-point shift for F1/recall). Search stopped here.
+## Public-only route (user request): one-change probes on R2op
+- History emulator v2 (src/lb_emul2.py, src/lb_history.py: 48 hash-verified scored files; template rates + group effects + 3 components)
+  FAILED time holdout (predicted C1/C7/R2op/R3op deltas vs Q30 off by 0.006-0.045; degenerate all-fit) -> rejected; probing one change at a time instead.
+| probe/B1_R2op_burst_MYIDSG-0.25_other+0.25.csv | fd8bab494f | ? | bursts split by country type (MY/ID/SG power users 2.3x enriched vs other-country 1.0x) |
+| probe/T3a_R2op_T3box+0.7.csv | a505e444ab | ? | planted night box T3 nudged up (never probed) |
