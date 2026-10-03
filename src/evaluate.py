@@ -71,3 +71,16 @@ def evaluate(name, fp, quick=False, ref="v3_lr", save=True):
             f.write(json.dumps({"name": name, **{k: (round(float(x), 5) if not isinstance(x, str) else x) for k, x in v.items()}}) + "\n")
     print(name.ljust(28), " ".join(f"{k}={x:.4f}" if not isinstance(x, str) else f"{k}={x}" for k, x in v.items()), flush=True)
     return oof, v
+
+
+def prevalence_deltas(o_new, o_ref, prevs=(0.005, 0.0075, 0.01, 0.0125, 0.015, 0.0177), n=150, seed=0):
+    """Mean AP difference (new - ref) when subsampling positives to simulate lower fraud prevalence (paired draws)."""
+    rng = np.random.default_rng(seed); pos, neg = np.where(Y == 1)[0], np.where(Y == 0)[0]; out = {}
+    for pv in prevs:
+        d = []
+        for k in range(n):
+            r = k % len(o_new); npos = int(round(pv * len(neg) / (1 - pv)))
+            idx = np.r_[rng.choice(pos, min(npos, len(pos)), replace=False), neg]
+            d.append(ap(Y[idx], o_new[r][idx]) - ap(Y[idx], o_ref[r][idx]))
+        out[pv] = float(np.mean(d))
+    return out

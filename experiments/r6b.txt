@@ -1,0 +1,10 @@
+r6_knn_dfraud                std=0.2412 std_median_fold=0.2467 std_sd_fold=0.0341 std_min_fold=0.1775 std_max_fold=0.3282 covW=0.3694 hnW=0.1975 roc=0.7750 hn_recall@top2%=0.2703 d_std_ci90=-0.0009..+0.0016 d_hnW_ci90=-0.0012..+0.0022 P(d_hnW>0)=0.6900
+     prevalence deltas vs v4: {0.005: 0.0007, 0.0075: 0.0006, 0.01: 0.0005, 0.0125: 0.0002, 0.015: 0.0002, 0.0177: 0.0002}
+r6_knn_dlegit                std=0.2434 std_median_fold=0.2449 std_sd_fold=0.0375 std_min_fold=0.1781 std_max_fold=0.3389 covW=0.3730 hnW=0.1985 roc=0.7768 hn_recall@top2%=0.2754 d_std_ci90=-0.0026..+0.0091 d_hnW_ci90=-0.0059..+0.0092 P(d_hnW>0)=0.6725
+     prevalence deltas vs v4: {0.005: 0.0031, 0.0075: 0.003, 0.01: 0.0026, 0.0125: 0.0026, 0.015: 0.0024, 0.0177: 0.0023}
+r6_knn_dratio                std=0.2463 std_median_fold=0.2522 std_sd_fold=0.0357 std_min_fold=0.1833 std_max_fold=0.3446 covW=0.3733 hnW=0.2019 roc=0.7738 hn_recall@top2%=0.2714 d_std_ci90=-0.0005..+0.0100 d_hnW_ci90=-0.0046..+0.0107 P(d_hnW>0)=0.7900
+     prevalence deltas vs v4: {0.005: 0.0072, 0.0075: 0.0068, 0.01: 0.0062, 0.0125: 0.0059, 0.015: 0.0056, 0.0177: 0.0052}
+r6_knn_dfraud_dlegit         std=0.2456 std_median_fold=0.2494 std_sd_fold=0.0374 std_min_fold=0.1801 std_max_fold=0.3489 covW=0.3721 hnW=0.1992 roc=0.7751 hn_recall@top2%=0.2765 d_std_ci90=-0.0008..+0.0117 d_hnW_ci90=-0.0063..+0.0117 P(d_hnW>0)=0.7125
+     prevalence deltas vs v4: {0.005: 0.0047, 0.0075: 0.005, 0.01: 0.0048, 0.0125: 0.0048, 0.015: 0.0047, 0.0177: 0.0045}
+r6_knn_full                  std=0.2469 std_median_fold=0.2515 std_sd_fold=0.0372 std_min_fold=0.1826 std_max_fold=0.3510 covW=0.3733 hnW=0.1997 roc=0.7758 hn_recall@top2%=0.2788 seed2=0.2429 miss=0.2414 hnW_miss=0.1955 holdout=0.4048 holdout_hnW=0.2585 d_std_ci90=+0.0006..+0.0152 d_hnW_ci90=-0.0053..+0.0144 P(d_hnW>0)=0.7850
+     prevalence deltas vs v4: {0.005: 0.0056, 0.0075: 0.0062, 0.01: 0.0061, 0.0125: 0.006, 0.015: 0.006, 0.0177: 0.0058}

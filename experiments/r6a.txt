@@ -1,0 +1,18 @@
+r6_knn                       std=0.2469 std_median_fold=0.2515 std_sd_fold=0.0372 std_min_fold=0.1826 std_max_fold=0.3510 covW=0.3733 hnW=0.1997 roc=0.7758 hn_recall@top2%=0.2788 d_std_ci90=+0.0006..+0.0152 d_hnW_ci90=-0.0053..+0.0144 P(d_hnW>0)=0.7850
+     prevalence deltas vs v4: {0.005: 0.0056, 0.0075: 0.0062, 0.01: 0.0061, 0.0125: 0.006, 0.015: 0.006, 0.0177: 0.0058}
+r6_knn_rateonly              std=0.2414 std_median_fold=0.2499 std_sd_fold=0.0337 std_min_fold=0.1797 std_max_fold=0.3267 covW=0.3715 hnW=0.1978 roc=0.7758 hn_recall@top2%=0.2720 d_std_ci90=-0.0014..+0.0017 d_hnW_ci90=-0.0017..+0.0021 P(d_hnW>0)=0.6325
+     prevalence deltas vs v4: {0.005: 0.0009, 0.0075: 0.0008, 0.01: 0.0007, 0.0125: 0.0005, 0.015: 0.0004, 0.0177: 0.0004}
+r6_iforest                   std=0.2404 std_median_fold=0.2498 std_sd_fold=0.0340 std_min_fold=0.1762 std_max_fold=0.3278 covW=0.3686 hnW=0.1958 roc=0.7754 hn_recall@top2%=0.2703 d_std_ci90=-0.0018..-0.0002 d_hnW_ci90=-0.0030..-0.0007 P(d_hnW>0)=0.0025
+     prevalence deltas vs v4: {0.005: -0.0007, 0.0075: -0.0007, 0.01: -0.0006, 0.0125: -0.0007, 0.015: -0.0007, 0.0177: -0.0007}
+r6_legitdens                 std=0.2402 std_median_fold=0.2487 std_sd_fold=0.0353 std_min_fold=0.1784 std_max_fold=0.3301 covW=0.3687 hnW=0.1952 roc=0.7766 hn_recall@top2%=0.2731 d_std_ci90=-0.0034..+0.0029 d_hnW_ci90=-0.0061..+0.0031 P(d_hnW>0)=0.3350
+     prevalence deltas vs v4: {0.005: -0.0026, 0.0075: -0.0016, 0.01: -0.0015, 0.0125: -0.0012, 0.015: -0.0011, 0.0177: -0.0009}
+r6_woe                       std=0.2378 std_median_fold=0.2408 std_sd_fold=0.0371 std_min_fold=0.1714 std_max_fold=0.3346 covW=0.3673 hnW=0.1930 roc=0.7741 hn_recall@top2%=0.2674 d_std_ci90=-0.0093..+0.0027 d_hnW_ci90=-0.0137..+0.0044 P(d_hnW>0)=0.2675
+     prevalence deltas vs v4: {0.005: -0.0048, 0.0075: -0.0047, 0.01: -0.0042, 0.0125: -0.0038, 0.015: -0.0036, 0.0177: -0.0033}
+r6_ctxamt                    std=0.2425 std_median_fold=0.2507 std_sd_fold=0.0343 std_min_fold=0.1766 std_max_fold=0.3288 covW=0.3740 hnW=0.1996 roc=0.7761 hn_recall@top2%=0.2691 d_std_ci90=-0.0005..+0.0028 d_hnW_ci90=-0.0008..+0.0042 P(d_hnW>0)=0.8650
+     prevalence deltas vs v4: {0.005: 0.0027, 0.0075: 0.0022, 0.01: 0.0021, 0.0125: 0.0018, 0.015: 0.0017, 0.0177: 0.0015}
+r6_moe_newdevice             std=0.2393 std_median_fold=0.2394 std_sd_fold=0.0362 std_min_fold=0.1696 std_max_fold=0.3221 covW=0.3687 hnW=0.1981 roc=0.7715 hn_recall@top2%=0.2720 d_std_ci90=-0.0097..+0.0060 d_hnW_ci90=-0.0095..+0.0099 P(d_hnW>0)=0.5150
+     prevalence deltas vs v4: {0.005: -0.0064, 0.0075: -0.0045, 0.01: -0.0036, 0.0125: -0.0025, 0.015: -0.0019, 0.0177: -0.0018}
+r6_moe_young                 std=0.2373 std_median_fold=0.2492 std_sd_fold=0.0354 std_min_fold=0.1654 std_max_fold=0.3160 covW=0.3640 hnW=0.1941 roc=0.7748 hn_recall@top2%=0.2674 d_std_ci90=-0.0099..+0.0041 d_hnW_ci90=-0.0124..+0.0085 P(d_hnW>0)=0.4100
+     prevalence deltas vs v4: {0.005: -0.0062, 0.0075: -0.0064, 0.01: -0.0055, 0.0125: -0.0044, 0.015: -0.0042, 0.0177: -0.0038}
+r6_moe_foreign               std=0.2345 std_median_fold=0.2366 std_sd_fold=0.0365 std_min_fold=0.1642 std_max_fold=0.3169 covW=0.3640 hnW=0.1904 roc=0.7750 hn_recall@top2%=0.2652 d_std_ci90=-0.0129..-0.0007 d_hnW_ci90=-0.0142..+0.0000 P(d_hnW>0)=0.0550
+     prevalence deltas vs v4: {0.005: -0.0079, 0.0075: -0.0075, 0.01: -0.007, 0.0125: -0.0068, 0.015: -0.0069, 0.0177: -0.0066}

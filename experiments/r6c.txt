@@ -1,0 +1,12 @@
+r6_knn_dratio_full           std=0.2463 std_median_fold=0.2522 std_sd_fold=0.0357 std_min_fold=0.1833 std_max_fold=0.3446 covW=0.3733 hnW=0.2019 roc=0.7738 hn_recall@top2%=0.2714 seed2=0.2417 miss=0.2421 hnW_miss=0.1976 holdout=0.4180 holdout_hnW=0.2749 d_std_ci90=-0.0005..+0.0100 d_hnW_ci90=-0.0046..+0.0107 P(d_hnW>0)=0.7900
+fresh seed 99: dratio-v4 d_std +0.0010 d_hnW -0.0008
+fresh seed 99: knnfull-v4 d_std +0.0025 d_hnW -0.0005
+fresh seed 314: dratio-v4 d_std +0.0009 d_hnW -0.0010
+fresh seed 314: knnfull-v4 d_std +0.0014 d_hnW -0.0023
+fresh seed 7: dratio-v4 d_std +0.0035 d_hnW +0.0021
+fresh seed 7: knnfull-v4 d_std +0.0034 d_hnW -0.0005
+knn_rate train q10/50/90 [-5.826 -4.474 -3.549] test [-5.826 -4.474 -3.549]
+d_fraud train q10/50/90 [0.552 0.795 1.102] test [0.581 0.828 1.166]
+d_legit train q10/50/90 [0.196 0.366 0.62 ] test [0.209 0.385 0.669]
+d_ratio train q10/50/90 [0.187 0.42  0.652] test [0.189 0.43  0.682]
+test rows with any missing: d_ratio median 0.397 vs complete 0.436
