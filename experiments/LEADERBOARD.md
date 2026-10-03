@@ -77,3 +77,10 @@ Local CV ordering E1>E2>E3 was reversed on public.
 Emulator (src/lb_soft.py): differentiable expected-AP label model fitted to 19 public scores; LOO corr 0.835, RMSE 0.0031;
 fitted mix v5 .38 / mlp .35 / sur .20 / k01 .10 / cb -.09 / v4 -.03, implied test prevalence ~1.5%. Cannot resolve <0.004 differences.
 New: LBmix_emulator_optimum.csv (ffcc529417, emulator +0.003 vs v5), TOP5_public_rank_average.csv (79e27a5cf7).
+
+## Burst prior shift (external finding) + EM label-shift sweep
+- ../FINAL_UPLOAD_v5_burst/predictions_v5_burst.csv (sha 7f7182dc26) = v5 with logit -1.0 on bursts (tx24>=16, 406 rows): public **0.198**.
+- LBmix_emulator_optimum 0.17x, TOP5 rank average 0.185 (user report).
+- Saerens EM per segment (src/em_shift.py, experiments/em_shift_segments.csv): burst test prior ~7.0% (shift -1.45);
+  new_device & age>365 -> ~0 (strong down-shift); EM unstable for other segments (covariate shift confounds).
+- Sweep CSVs in submissions/shift/: S1 burst-1.5, S2 burst-2.0, S3 burst-1.0+ndold-0.5, S4 burst-1.0+ndold-1.0, S5 burst-1.5+ndold-0.75.
