@@ -170,3 +170,10 @@ Packages: ../Track2_R1op_package and ../Track2_Q30op_package (both sandbox-verif
 - As blend member 0.8 Q30base + 0.2 GALR: +0.0009..+0.0011 (5/5); fresh seeds 11/99/314: w0.1 +0.0011..+0.0013, w0.2 +0.0008..+0.0030;
   nested CV (C,w inner-selected, never w=0): +0.0017 / +0.0033. Bagging 30 fold models (prob or rank avg): no gain vs full fit.
 | tmpl/R2op_package_output.csv (= ../Track2_R2op_package/predictions_R2op.csv) | bc365689c1 | ? |
+| tmpl/R2op_package_output.csv | bc365689c1 | **0.23434** (best; Q30 + T2 level + GALR 20% + op shift) |
+- Residual scan of R2 base OOF (src/resid_scan.py): no single-feature bin |z|>3, 1/839 pairwise cells |z|>3 (chance) -> base saturated on train.
+- Burst country split (MY/ID/SG power users 3.9x in test vs other-country 1.65x): v5 already calibrated within train bursts by country; per-cell
+  moment matching too noisy (6-32 train frauds/cell) -> not acted on. No 4th planted template outside T1-T3 (residual excess = box-edge spill + count noise).
+- Greedy blend search over 151 stored OOFs (src/greedy_blend.py): only degree-3 interaction LR survives (held-out +0.0009); fresh seeds (src/poly3_fresh.py)
+  w0.1: +0.0002/+0.0051/+0.0016/+0.0028.
+| tmpl/R3op_package_output.csv (= ../Track2_R3op_package/predictions_R3op.csv) | 7cdfaac8ee | ? |
