@@ -182,7 +182,7 @@ Final: R2op (../Track2_R2op_package, 0.23434 public, sandbox-verified, includes 
 ## Public-only route (user request): one-change probes on R2op
 - History emulator v2 (src/lb_emul2.py, src/lb_history.py: 48 hash-verified scored files; template rates + group effects + 3 components)
   FAILED time holdout (predicted C1/C7/R2op/R3op deltas vs Q30 off by 0.006-0.045; degenerate all-fit) -> rejected; probing one change at a time instead.
-| probe/B1_R2op_burst_MYIDSG-0.25_other+0.25.csv | fd8bab494f | ? | bursts split by country type (per-row rate vs train: MY/ID/SG bursts 3.9x, other-country bursts 1.7x) |
+| probe/B1_R2op_burst_MYIDSG-0.25_other+0.25.csv | fd8bab494f | **0.24016** (+0.0058 vs R2op; new best) | bursts split by country type (per-row rate vs train: MY/ID/SG bursts 3.9x, other-country bursts 1.7x) |
 | probe/T3a_R2op_T3box+0.7.csv | a505e444ab | ? | planted night box T3 nudged up (never probed) |
 ## TabPFN (pretrained tabular transformer, tabpfn 9.1.0, GPU; src/tabpfn_cv.py) - REJECTED
 Same folds (evaluate.SPLITS repeat 0), CV PR-AUC: v5 0.2488 | R2 base blend 0.2582 |
@@ -207,3 +207,7 @@ Program synthesis stability: 28 programs rediscovered in >=80% of 25 folds (nd&n
 foreign&age<180, foreign&amt>500, burst&amt>1000, amt>250, amt>500, t24>=20, t1>=4, t1>=7, age>270, ...) - real structure, already
 captured by v5's smooth features + interaction LR. Earlier: LCA generative (0.18), multiple imputation, importance weighting, WoE - rejected.
 Conclusion: no architecture beats the LR+kNN+interaction+GALR blend on train CV; R2op (0.23434) stays final.
+## Burst-by-country coordinate steps from B1 (0.24016)
+Cells (test n / in R2op top-300): young MY/ID/SG 60/19, young other 44/38, old MY/ID/SG 270/35, old other 26/24.
+| probe/B2a_burst_MYIDSG-0.25_other+0.5.csv | a8a0634efc | ? | other-country side pushed further |
+| probe/B2b_burst_MYIDSG-0.5_other+0.25.csv | 722fc4de92 | ? | MY/ID/SG side pushed further |
