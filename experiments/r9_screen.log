@@ -131,3 +131,4 @@ PU iid (unlabeled = val fold) alpha=0.0  std 0.2336 (d -0.0139)  hnW 0.1922 (d -
 PU iid (unlabeled = val fold) alpha=0.1  std 0.2337 (d -0.0139)  hnW 0.1941 (d -0.0118)  folds+ 0.2
 PU iid (unlabeled = val fold) alpha=0.3  std 0.2265 (d -0.0210)  hnW 0.1887 (d -0.0172)  folds+ 0.2
 PU iid (unlabeled = val fold) alpha=1.0  std 0.2150 (d -0.0326)  hnW 0.1797 (d -0.0262)  folds+ 0.0
+v5 NO velocity (local, train regime)     std 0.2192 (d -0.0283)  hnW 0.2030 (d -0.0029)  folds+ 0.1

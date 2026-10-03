@@ -106,3 +106,7 @@ Tried and rejected as shift estimators (fail the known-public-direction check): 
 importance-weighted v5 (src/iw.py: no burst shift). Segment emulator (src/lb_seg.py): corr 0.949 overall, LOO RMSE 0.0042 on shift family.
 Burst age split: train bursts <=90d 63.8% fraud (n47) vs test n49 (same count); >365d train 139 (8-10% fraud) vs test 290 (2x) ->
 injected bursts are old-account bursts. Next: X1 (burst old -1.25, young 0, ndold -0.75, 208c516581), S4 (burst -1, ndold -1, 7568ae0d7a).
+| shift/S4_burst-1.0_ndold-1.0.csv | 7568ae0d7a | 0.20516 |
+| shift/X1_burstOld-1.25_burstYoung0_ndold-0.75.csv | 208c516581 | 0.18152 (young bursts must be demoted: mostly legit in test) |
+W2 top-120: 55 young bursts (46%). No-velocity v5 (NV, 38c139a24e) still keeps 47 young bursts in top-120 -> not submitted.
+Next: P1 young -2.0/old -1.0, P2 young -1.0/old -0.5 (ndold -0.75).
