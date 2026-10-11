@@ -1,0 +1,26 @@
+{
+  "seeds": [
+    43017,
+    92041
+  ],
+  "folds": 5,
+  "models": [
+    "c2_recipe",
+    "unadjusted_transductive",
+    "train_only",
+    "train_only_no_knn"
+  ],
+  "train_sha256": "94687430b8c748e575273ddf1d28efe97f8bb84faabe5da777c4f7fe178502ce",
+  "code_sha256": "03ba5fa882d7c60e0c8467d8d8733acdb68f435502501cfd312e17241d4616f6",
+  "C2_hashes": {
+    "model.pkl": "60d9e77b6234ee01af848c2dfc95b5fb37b15d38fc845010422dc96b3f36add7",
+    "prediction_notebook.ipynb": "29455e045f2a92144e3e228efbeb690a4d2dc14992498fc4e7a8ab0fdcdb13b1",
+    "README.md": "74af0e2ad936dfe29daceb0fb387581239fe6e2357714a7cec4e25442b6dd760",
+    "reference_C2_public_0.24174.csv": "0f2060374630045c223bc215b25ca4d29f92705bb5ffbd4380d17fe70e41640e",
+    "technical_report.pdf": "8910a277c2daa134078e6ceee19e0bc65b85c2aaa22707bb9045906eac6f2aa4"
+  },
+  "primary_candidate": "train_only: same blend weights and regularisation; no public rules or test-feature medians",
+  "selection": "No parameter search. No-knn is a diagnostic; train_only is the predeclared artifact.",
+  "threshold": "For each outer fold, fit a separate train-only model on 75% of outer training; choose F1 threshold on the remaining 25%. Evaluate threshold on outer validation. Final uses median of these 10 thresholds.",
+  "limitations": "Repeated splits reuse the same 353 positive labels and do not undo historical selection. Population weights assume unchanged P(y|x); they cannot verify new fraud mechanisms. Missingness is feature masking, not concept shift. No private/public evaluation."
+}

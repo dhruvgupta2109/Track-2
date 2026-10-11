@@ -1,0 +1,5 @@
+held_countries,model,rows,positives,ap
+AU/JP,train_only,966,30,0.37231819073177896
+AU/JP,train_only_no_knn,966,30,0.38338691182875595
+MY/ID,train_only,2065,52,0.33371408396713526
+MY/ID,train_only_no_knn,2065,52,0.3338396592863554

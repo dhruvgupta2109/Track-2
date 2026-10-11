@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "isolated_notebook_checks": [
+    {
+      "case": "full_default_paths",
+      "rows": 12000,
+      "max_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "case": "shuffled_no_id_env_paths",
+      "rows": 12000,
+      "max_difference": 2.220446049250313e-16,
+      "passed": true
+    },
+    {
+      "case": "malformed_missing_columns",
+      "rows": 5,
+      "max_difference": 8.326672684688674e-17,
+      "passed": true
+    },
+    {
+      "case": "all_missing",
+      "rows": 3,
+      "max_difference": 4.85722573273506e-17,
+      "passed": true
+    },
+    {
+      "case": "empty_header",
+      "rows": 0,
+      "max_difference": 0.0,
+      "passed": true
+    },
+    {
+      "case": "zero_byte_input",
+      "rows": 0,
+      "max_difference": 0.0,
+      "passed": true
+    }
+  ],
+  "singleton_batch_invariance": true,
+  "baseline_C2_max_difference": 3.608224830031759e-16,
+  "C2_files_unchanged": true,
+  "python": "C:\\Users\\ryash\\OneDrive\\Documents\\GitHub\\MLDA Datathon\\Track 2\\.venv_clean\\Scripts\\python.exe",
+  "test_rank_correlation_C2": 0.9153024537034892,
+  "candidate_flagged_at_0_5": 230,
+  "C2_flagged_at_0_5": 307
+}

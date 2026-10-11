@@ -1,0 +1,13 @@
+{
+  "purpose": "Diagnostic only; candidate, hyperparameters and threshold fixed before this check.",
+  "multipliers": [
+    3,
+    10
+  ],
+  "groups": [
+    "legit_bursts",
+    "legit_older_new_device",
+    "legit_high_value_older"
+  ],
+  "limitations": "Only reweights observed legitimate examples; cannot simulate genuinely unseen fraud mechanisms or synthetic look-alikes. No private labels used."
+}
